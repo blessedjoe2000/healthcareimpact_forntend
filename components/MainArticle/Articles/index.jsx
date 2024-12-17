@@ -1,7 +1,6 @@
 import { useState } from "react";
 import Image from "next/image";
 import { Divider, Box } from "@mui/material";
-import healthImage from "/public/images/paprika-3212137_1280.jpg";
 import { useArticleData, useArticleDetail } from "@/internal-api/articleData";
 import {
   ArticleContainer,
@@ -11,31 +10,40 @@ import {
   ArticleHeadline,
   ArticleAuthor,
 } from "./styles";
+import Link from "next/link";
 
 export default function Articles() {
-  const [selectedArticle, setSelectedArticle] = useState();
-  const { data: postData } = useArticleData();
-
-  const { data: artistDetail } = useArticleDetail();
+  const { data: articlesData } = useArticleData();
 
   return (
     <div>
-      {postData?.map((post) => (
-        <div key={post.id}>
+      {articlesData?.map((article) => (
+        <div key={article.id}>
           <ArticleContainer>
             <TitleContainer>
-              <ArticleTitle>{post.title}</ArticleTitle>
-              <ArticleHeadline>{post.highlights}</ArticleHeadline>
-              <ArticleAuthor>{post.author}</ArticleAuthor>
+              <ArticleTitle>
+                <Link
+                  href={`http://localhost:3000/${article.title}/${article.id}`}
+                >
+                  {article.title}
+                </Link>
+              </ArticleTitle>
+              <ArticleHeadline>{article.highlights}</ArticleHeadline>
+              <ArticleAuthor>{article.author}</ArticleAuthor>
             </TitleContainer>
 
             <ImageContainer>
-              <Image
-                src={post.imageUrl.url}
-                alt={post.title}
-                width={500}
-                height={300}
-              />
+              <Link
+                href={`http://localhost:3000/${article.title}/${article.id}`}
+              >
+                <Image
+                  src={article.imageUrl.url}
+                  alt={article.title}
+                  width={500}
+                  height={300}
+                  priority
+                />
+              </Link>
             </ImageContainer>
           </ArticleContainer>
           <Box px={3}>

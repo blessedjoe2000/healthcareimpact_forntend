@@ -10,6 +10,7 @@ export const SideContainer = styled(Box)`
   padding: 10px;
   margin-top: 10px;
 `;
+
 export const SideTopContent = styled(Box)`
   margin-bottom: 10px;
 `;

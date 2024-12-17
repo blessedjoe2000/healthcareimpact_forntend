@@ -3,6 +3,7 @@ import { useArticleData } from "@/internal-api/articleData";
 import {
   SideWrapper,
   SideContainer,
+  SideTopContainer,
   SideTopContent,
   SideHeadline,
   SideAuthor,
@@ -35,15 +36,18 @@ export default function SidebarArticles() {
           }}
         />
         {postData?.map((post) => (
-          <SideContainer key={post.id}>
-            <SideTopContent>
-              <SideAuthor>{post.author}</SideAuthor>
-              <SideHeadline>{post.headline}</SideHeadline>
-            </SideTopContent>
-            <div>
-              <Avatar src={post.authorImage} alt={post.author} />
-            </div>
-          </SideContainer>
+          <Box key={post.id}>
+            <SideContainer>
+              <SideTopContent>
+                <SideAuthor>{post.author}</SideAuthor>
+                <SideHeadline>{post.headline}</SideHeadline>
+              </SideTopContent>
+              <div>
+                <Avatar src={post.authorImage} alt={post.author} />
+              </div>
+            </SideContainer>
+            <Divider />
+          </Box>
         ))}
       </SideWrapper>
     </Box>

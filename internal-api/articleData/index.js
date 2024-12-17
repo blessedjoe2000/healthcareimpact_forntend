@@ -3,12 +3,19 @@ import axios from "axios";
 
 const fetchArticles = async () => {
   const response = await axios.get(`/api/articles`);
-  console.log("response from internal api", response);
   return response.data;
 };
 
 export const fetchArticle = async (id) => {
   const response = await axios.get(`/api/articles/${id}`);
+  return response.data;
+};
+
+export const fetchArticleTitle = async (encodedTitle) => {
+  const decodedTitle = decodeURIComponent(encodedTitle);
+  console.log("title in fetch article :>> ", decodedTitle);
+  const response = await axios.get(`/api/articles/${id}`);
+  console.log("fetch article title in internal api :>> ", response.data);
   return response.data;
 };
 
@@ -24,5 +31,13 @@ export const useArticleDetail = (id) => {
     queryKey: ["articles", id],
     queryFn: () => (id ? fetchArticle(id) : Promise.resolve(null)),
     enabled: id !== null,
+  });
+};
+
+export const useArticleTitle = (title) => {
+  return useQuery({
+    queryKey: ["articles", title],
+    queryFn: () => (title ? fetchArticleTitle(title) : Promise.resolve(null)),
+    enabled: title !== null,
   });
 };
