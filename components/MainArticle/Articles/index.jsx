@@ -1,7 +1,6 @@
-import { useState } from "react";
 import Image from "next/image";
 import { Divider, Box } from "@mui/material";
-import { useArticleData, useArticleDetail } from "@/internal-api/articleData";
+import { useArticleData } from "@/internal-api/articleData";
 import {
   ArticleContainer,
   ImageContainer,

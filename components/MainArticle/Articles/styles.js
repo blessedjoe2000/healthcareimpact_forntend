@@ -1,4 +1,4 @@
-import { styled, Container, Box, Typography } from "@mui/material";
+import { styled, Box, Typography } from "@mui/material";
 
 export const ArticleContainer = styled(Box)`
   display: grid;

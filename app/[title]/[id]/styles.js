@@ -7,13 +7,18 @@ export const SpinnerContainer = styled(Box)`
 export const MainArticleWrapper = styled(Box)`
   display: grid;
   grid-template-columns: 3fr 1fr;
+
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+  }
 `;
 export const ArticleContainer = styled(Box)`
   margin: 50px 0;
   margin-right: 30px;
 
-  @media (min-width: 768px) {
-    /* grid-template-columns: 1fr 2fr; */
+  @media (max-width: 768px) {
+    margin-right: 0px;
   }
 `;
 
@@ -45,7 +50,7 @@ export const ImageContainer = styled(Box)`
 export const ArticleAvatarAndAuthor = styled(Box)`
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 10px;
 `;
 
 export const ArticleDateAndAuthor = styled(Box)`
@@ -56,6 +61,13 @@ export const ArticleDateAndAuthor = styled(Box)`
   justify-content: space-between;
   align-items: center;
   padding-bottom: 20px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    gap: 10px;
+  }
 `;
 
 export const ArticleMainContent = styled(Box)`
