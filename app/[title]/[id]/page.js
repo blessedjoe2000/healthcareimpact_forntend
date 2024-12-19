@@ -19,6 +19,7 @@ import { useArticleDetail, useArticleTitle } from "@/internal-api/articleData";
 import SidebarArticles from "@/components/MainArticle/SidebarArticles";
 import { Container } from "@mui/system";
 import Spinner from "@/components/Spinner";
+import { SidebarContainer } from "@/components/MainArticle/styles";
 
 export default function SingleArticle() {
   const { id: id } = useParams();
@@ -104,7 +105,9 @@ export default function SingleArticle() {
             </Box>
           </ArticleContainer>
         </div>
-        <SidebarArticles />
+        <SidebarContainer>
+          <SidebarArticles />
+        </SidebarContainer>
       </MainArticleWrapper>
     </Container>
   );

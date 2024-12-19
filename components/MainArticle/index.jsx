@@ -2,7 +2,7 @@
 import { SpinnerContainer } from "@/app/[title]/[id]/styles";
 import Articles from "./Articles";
 import SidebarArticles from "./SidebarArticles";
-import { MainArticleWrapper } from "./styles";
+import { MainArticleWrapper, SidebarContainer } from "./styles";
 import Spinner from "../Spinner";
 import { useArticleData } from "@/internal-api/articleData";
 
@@ -19,7 +19,9 @@ export default function MainArticle() {
   return (
     <MainArticleWrapper>
       <Articles />
-      <SidebarArticles />
+      <SidebarContainer>
+        <SidebarArticles />
+      </SidebarContainer>
     </MainArticleWrapper>
   );
 }

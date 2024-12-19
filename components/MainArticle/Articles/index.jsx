@@ -31,7 +31,7 @@ export default function Articles() {
               <ArticleAuthor>{article.author}</ArticleAuthor>
             </TitleContainer>
 
-            <ImageContainer>
+            <ImageContainer sx={{ width: "100%", position: "relative" }}>
               <Link
                 href={`http://localhost:3000/${article.title}/${article.id}`}
               >
@@ -41,6 +41,7 @@ export default function Articles() {
                   width={500}
                   height={300}
                   priority
+                  layout="responsive"
                 />
               </Link>
             </ImageContainer>

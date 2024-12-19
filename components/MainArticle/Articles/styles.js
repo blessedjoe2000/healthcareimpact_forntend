@@ -2,19 +2,23 @@ import { styled, Box, Typography } from "@mui/material";
 
 export const ArticleContainer = styled(Box)`
   display: grid;
-  grid-template-columns: 1fr;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  grid-template-columns: 1fr 2fr;
+  margin: 10px 0;
 
-  @media (min-width: 768px) {
-    grid-template-columns: 1fr 2fr;
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
   }
 `;
 export const TitleContainer = styled(Box)`
   display: flex;
   flex-direction: column;
-  //gap: 5px;
-  padding: 0 10px;
+  gap: 5px;
+  padding-right: 20px;
+
+  @media (max-width: 768px) {
+    padding-right: 0;
+  }
 `;
 
 export const ArticleTitle = styled("h2")`
@@ -39,5 +43,5 @@ export const ArticleAuthor = styled(Typography)`
   line-height: 1.2;
 `;
 export const ImageContainer = styled(Box)`
-  padding: 10px;
+  padding-top: 20px;
 `;
