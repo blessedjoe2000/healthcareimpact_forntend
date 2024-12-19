@@ -3,11 +3,13 @@ import { styled, Box, Typography } from "@mui/material";
 export const ArticleContainer = styled(Box)`
   display: grid;
   grid-template-columns: 1fr 2fr;
-  margin: 10px 0;
+  margin: 20px 0;
+  padding-right: 20px;
 
   @media (max-width: 768px) {
     display: flex;
     flex-direction: column;
+    padding-right: 0px;
   }
 `;
 export const TitleContainer = styled(Box)`
@@ -18,30 +20,25 @@ export const TitleContainer = styled(Box)`
 
   @media (max-width: 768px) {
     padding-right: 0;
+    margin-bottom: 10px;
   }
 `;
 
-export const ArticleTitle = styled("h2")`
+export const ArticleTitle = styled(Typography)`
   font-size: 1.2rem;
   font-weight: 700;
   color: #000;
-  line-height: 1.2;
 `;
 
 export const ArticleHeadline = styled(Typography)`
   font-size: 0.9rem;
   font-weight: 200;
   color: #000;
-  line-height: 1.2;
 `;
 
 export const ArticleAuthor = styled(Typography)`
-  margin-top: 10px;
   font-size: 0.8rem;
   font-weight: 200;
   color: #000;
-  line-height: 1.2;
 `;
-export const ImageContainer = styled(Box)`
-  padding-top: 20px;
-`;
+export const ImageContainer = styled(Box)``;

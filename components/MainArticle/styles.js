@@ -9,9 +9,3 @@ export const MainArticleWrapper = styled(Box)`
     flex-direction: column;
   }
 `;
-
-export const SidebarContainer = styled(Box)`
-  @media (max-width: 768px) {
-    display: none;
-  }
-`;

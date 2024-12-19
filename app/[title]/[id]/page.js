@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { Divider, Box, Avatar } from "@mui/material";
+import { Box, Avatar } from "@mui/material";
 
 import {
   ArticleContainer,
@@ -15,11 +15,10 @@ import {
   SpinnerContainer,
 } from "./styles";
 import { useParams } from "next/navigation";
-import { useArticleDetail, useArticleTitle } from "@/internal-api/articleData";
+import { useArticleDetail } from "@/internal-api/articleData";
 import SidebarArticles from "@/components/MainArticle/SidebarArticles";
 import { Container } from "@mui/system";
 import Spinner from "@/components/Spinner";
-import { SidebarContainer } from "@/components/MainArticle/styles";
 
 export default function SingleArticle() {
   const { id: id } = useParams();
@@ -105,9 +104,8 @@ export default function SingleArticle() {
             </Box>
           </ArticleContainer>
         </div>
-        <SidebarContainer>
-          <SidebarArticles />
-        </SidebarContainer>
+
+        <SidebarArticles />
       </MainArticleWrapper>
     </Container>
   );
