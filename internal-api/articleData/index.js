@@ -33,11 +33,3 @@ export const useArticleDetail = (id) => {
     enabled: id !== null,
   });
 };
-
-export const useArticleTitle = (title) => {
-  return useQuery({
-    queryKey: ["articles", title],
-    queryFn: () => (title ? fetchArticleTitle(title) : Promise.resolve(null)),
-    enabled: title !== null,
-  });
-};

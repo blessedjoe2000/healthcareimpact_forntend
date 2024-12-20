@@ -1,17 +1,39 @@
 import Link from "next/link";
-import { Typography } from "@mui/material";
+import { Divider, Typography } from "@mui/material";
+import { NavContainer, NavList, NavMenu } from "./styles";
+import DarkAndLightSwitch from "../DarkAndLightSwitch";
 
 function Navbar() {
   return (
-    <div className="navbar">
-      <Typography>LOGO</Typography>
-      <nav>
-        <Link href="#">Home</Link>
-        <Link href="#">Health</Link>
-        <Link href="#">Wellbeing</Link>
-        <Link href="#">Contact</Link>
-      </nav>
-    </div>
+    <NavContainer>
+      <div className="navbar">
+        <Typography>LOGO</Typography>
+        <NavMenu>
+          <NavList>
+            <Link href="#" className="navlist">
+              Home
+            </Link>
+          </NavList>
+          <NavList>
+            <Link href="#" className="navlist">
+              Health
+            </Link>
+          </NavList>
+          <NavList>
+            <Link href="#" className="navlist">
+              Wellbeing
+            </Link>
+          </NavList>
+          <NavList>
+            <Link href="#" className="navlist">
+              Contact
+            </Link>
+          </NavList>
+        </NavMenu>
+        <DarkAndLightSwitch />
+      </div>
+      <Divider />
+    </NavContainer>
   );
 }
 

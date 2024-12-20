@@ -28,7 +28,7 @@ export default function Articles() {
                 </Link>
               </ArticleTitle>
               <ArticleHeadline>{article.highlights}</ArticleHeadline>
-              <ArticleAuthor>{article.author}</ArticleAuthor>
+              <ArticleAuthor>{`By ${article.author}`}</ArticleAuthor>
             </TitleContainer>
 
             <ImageContainer sx={{ width: "100%", position: "relative" }}>
