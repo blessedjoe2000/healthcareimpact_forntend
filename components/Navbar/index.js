@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Divider, Typography } from "@mui/material";
 import { NavContainer, NavList, NavMenu } from "./styles";
-import DarkAndLightSwitch from "../DarkAndLightSwitch";
+import DarkAndLightSwitch from "../DarkAndLightMood";
 
 function Navbar() {
   return (

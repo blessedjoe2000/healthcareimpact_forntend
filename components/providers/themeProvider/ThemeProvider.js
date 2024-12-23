@@ -38,6 +38,7 @@ export function ThemeProvider({ children }) {
       createTheme({
         palette: {
           mode,
+          dividerBackground: mode === "light" ? "#000" : "#EEEEEE",
           primary: {
             main: "#fff",
             light: "#F5F5F5",
@@ -47,15 +48,22 @@ export function ThemeProvider({ children }) {
             light: "#E3F2FD",
           },
           text: {
-            primary: mode === "light" ? "#01579B" : "#fff",
+            primary: mode === "light" ? "#0779E4" : "#fff",
             secondary: mode === "light" ? "#000" : "#E0E0E0",
           },
           background: {
-            default: mode === "light" ? "#F5F5F5" : "#000",
+            default: mode === "light" ? "#F5F5F5" : "#021526",
             paper: mode === "light" ? "#FFFFFF" : "#000",
           },
         },
         components: {
+          MuiDivider: {
+            styleOverrides: {
+              root: {
+                backgroundColor: mode === "light" ? "#E0E0E0" : "#4A4A4A",
+              },
+            },
+          },
           MuiButton: {
             styleOverrides: {
               root: {

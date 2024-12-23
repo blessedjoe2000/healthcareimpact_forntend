@@ -49,8 +49,9 @@ export default function Articles() {
           <Box px={3}>
             <Divider
               sx={{
-                backgroundColor: "#000",
+                backgroundColor: (theme) => theme.palette.dividerBackground,
                 height: "1px",
+                color: (theme) => theme.palette.text.primary,
               }}
             />
           </Box>

@@ -31,8 +31,9 @@ export default function SidebarArticles() {
       <SideWrapper>
         <Divider
           sx={{
-            backgroundColor: "#000",
+            backgroundColor: (theme) => theme.palette.dividerBackground,
             height: "2px",
+            color: (theme) => theme.palette.text.primary,
           }}
         />
         {postData?.map((post) => (

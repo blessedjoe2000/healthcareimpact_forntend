@@ -18,14 +18,14 @@ export const SideTopContent = styled(Box)`
 export const SideHeadline = styled(Typography)`
   font-size: 0.9rem;
   font-weight: 700;
-  color: #000;
+  /* color: #000; */
   line-height: 1.2;
 `;
 
 export const SideAuthor = styled(Typography)`
   font-size: 0.75rem;
   font-weight: 200;
-  color: #000;
+  /* color: #000; */
   line-height: 1.2;
   margin-bottom: 10px;
 `;
