@@ -20,6 +20,8 @@ import SidebarArticles from "@/components/MainArticle/SidebarArticles";
 import { Container } from "@mui/system";
 import Spinner from "@/components/Spinner";
 
+import RelatedArticles from "@/components/RelatedArticles";
+
 export default function SingleArticle() {
   const { id: id } = useParams();
 
@@ -105,7 +107,7 @@ export default function SingleArticle() {
           </ArticleContainer>
         </div>
 
-        <SidebarArticles />
+        <RelatedArticles singleArticle={articleData} />
       </MainArticleWrapper>
     </Container>
   );

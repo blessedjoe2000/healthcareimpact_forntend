@@ -3,6 +3,13 @@ import { styled, Box, Typography } from "@mui/material";
 export const SideWrapper = styled(Box)`
   margin-top: 20px;
 `;
+
+export const SideHeading = styled(Box)`
+  font-size: 1.2rem;
+  font-weight: 700;
+  line-height: 1.2;
+`;
+
 export const SideContainer = styled(Box)`
   display: flex;
   align-items: center;
@@ -18,14 +25,12 @@ export const SideTopContent = styled(Box)`
 export const SideHeadline = styled(Typography)`
   font-size: 0.9rem;
   font-weight: 700;
-  /* color: #000; */
   line-height: 1.2;
 `;
 
 export const SideAuthor = styled(Typography)`
   font-size: 0.75rem;
   font-weight: 200;
-  /* color: #000; */
   line-height: 1.2;
   margin-bottom: 10px;
 `;

@@ -11,14 +11,6 @@ export const fetchArticle = async (id) => {
   return response.data;
 };
 
-export const fetchArticleTitle = async (encodedTitle) => {
-  const decodedTitle = decodeURIComponent(encodedTitle);
-  console.log("title in fetch article :>> ", decodedTitle);
-  const response = await axios.get(`/api/articles/${id}`);
-  console.log("fetch article title in internal api :>> ", response.data);
-  return response.data;
-};
-
 export const useArticleData = () => {
   return useQuery({
     queryKey: ["articles"],
@@ -32,4 +24,40 @@ export const useArticleDetail = (id) => {
     queryFn: () => (id ? fetchArticle(id) : Promise.resolve(null)),
     enabled: id !== null,
   });
+};
+
+export const filterRelatedArticles = async (singleArticle) => {
+  const keywords = [
+    "diabetics",
+    "cancer",
+    "flu",
+    "mental health",
+    "blood pressure",
+    "heart failure",
+  ];
+
+  try {
+    // Fetch all articles
+    const response = await axios.get(`/api/articles`);
+    const articles = response.data;
+
+    // Filter articles based on matching keywords in the single article title or content
+    const relatedArticles = articles.filter((article) => {
+      if (article?.title !== singleArticle?.title) {
+        return null;
+      }
+
+      // Check for matching keywords in the article's title or content
+      return keywords.some(
+        (keyword) =>
+          article?.title.toLowerCase().includes(keyword.toLowerCase()) ||
+          article?.mainContent.toLowerCase().includes(keyword.toLowerCase())
+      );
+    });
+
+    return relatedArticles.length > 0 ? relatedArticles : articles;
+  } catch (error) {
+    console.error("Error fetching related articles:", error);
+    return [];
+  }
 };

@@ -27,18 +27,15 @@ export const TitleContainer = styled(Box)`
 export const ArticleTitle = styled(Typography)`
   font-size: 1.2rem;
   font-weight: 700;
-  /* color: #000; */
 `;
 
 export const ArticleHeadline = styled(Typography)`
   font-size: 0.9rem;
   font-weight: 200;
-  /* color: #000; */
 `;
 
 export const ArticleAuthor = styled(Typography)`
   font-size: 0.8rem;
   font-weight: 200;
-  /* color: #000; */
 `;
 export const ImageContainer = styled(Box)``;

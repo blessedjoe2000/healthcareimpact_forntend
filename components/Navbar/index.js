@@ -10,22 +10,22 @@ function Navbar() {
         <Typography>LOGO</Typography>
         <NavMenu>
           <NavList>
-            <Link href="#" className="navlist">
+            <Link href="/" className="navlist">
               Home
             </Link>
           </NavList>
           <NavList>
-            <Link href="#" className="navlist">
+            <Link href="/" className="navlist">
               Health
             </Link>
           </NavList>
           <NavList>
-            <Link href="#" className="navlist">
+            <Link href="/" className="navlist">
               Wellbeing
             </Link>
           </NavList>
           <NavList>
-            <Link href="#" className="navlist">
+            <Link href="/" className="navlist">
               Contact
             </Link>
           </NavList>

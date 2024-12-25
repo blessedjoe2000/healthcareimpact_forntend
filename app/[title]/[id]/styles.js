@@ -25,14 +25,12 @@ export const ArticleContainer = styled(Box)`
 export const ArticleTitle = styled(Typography)`
   font-size: 2rem;
   font-weight: 700;
-  color: #000;
   line-height: 1.2;
 `;
 
 export const ArticleHeadline = styled(Typography)`
   font-size: 1.2rem;
   font-weight: 400;
-  color: #000;
   margin: 20px 0;
 `;
 
@@ -40,7 +38,6 @@ export const ArticleAuthor = styled(Typography)`
   margin-top: 10px;
   font-size: 0.8rem;
   font-weight: 200;
-  color: #000;
   line-height: 1.2;
 `;
 export const ImageContainer = styled(Box)`
@@ -56,7 +53,6 @@ export const ArticleAvatarAndAuthor = styled(Box)`
 export const ArticleDateAndAuthor = styled(Box)`
   font-size: 0.9rem;
   font-weight: 200;
-  color: #000;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -71,5 +67,5 @@ export const ArticleDateAndAuthor = styled(Box)`
 `;
 
 export const ArticleMainContent = styled(Box)`
-  color: #000;
+  /* color: #000; */
 `;

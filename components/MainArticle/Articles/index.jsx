@@ -17,16 +17,14 @@ export default function Articles() {
   return (
     <div>
       {articlesData?.map((article) => (
-        <div key={article.id}>
+        <Box key={article.id}>
           <ArticleContainer>
             <TitleContainer>
-              <ArticleTitle>
-                <Link
-                  href={`http://localhost:3000/${article.title}/${article.id}`}
-                >
-                  {article.title}
-                </Link>
-              </ArticleTitle>
+              <Link
+                href={`http://localhost:3000/${article.title}/${article.id}`}
+              >
+                <ArticleTitle>{article.title}</ArticleTitle>
+              </Link>
               <ArticleHeadline>{article.highlights}</ArticleHeadline>
               <ArticleAuthor>{`By ${article.author}`}</ArticleAuthor>
             </TitleContainer>
@@ -51,11 +49,12 @@ export default function Articles() {
               sx={{
                 backgroundColor: (theme) => theme.palette.dividerBackground,
                 height: "1px",
+
                 color: (theme) => theme.palette.text.primary,
               }}
             />
           </Box>
-        </div>
+        </Box>
       ))}
     </div>
   );
