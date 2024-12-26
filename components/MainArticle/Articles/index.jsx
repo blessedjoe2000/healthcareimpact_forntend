@@ -3,7 +3,6 @@ import { Divider, Box } from "@mui/material";
 import { useArticleData } from "@/internal-api/articleData";
 import {
   ArticleContainer,
-  ImageContainer,
   TitleContainer,
   ArticleTitle,
   ArticleHeadline,
@@ -29,18 +28,27 @@ export default function Articles() {
               <ArticleAuthor>{`By ${article.author}`}</ArticleAuthor>
             </TitleContainer>
 
-            <Link
-              href={`http://localhost:3000/${article.title}/${article.id}`}
-              style={{ position: "relative", width: "100%", height: "300px" }}
-            >
-              <Image
-                src={article.imageUrl.url}
-                alt={article.title}
-                fill
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                style={{ objectFit: "cover" }}
-                priority
-              />
+            <Link href={`http://localhost:3000/${article.title}/${article.id}`}>
+              <Box
+                sx={{
+                  width: "100%",
+                  position: "relative",
+                  height: {
+                    xs: "250px",
+                    sm: "300px",
+                    md: "350px",
+                  },
+                }}
+              >
+                <Image
+                  src={article.imageUrl.url}
+                  alt={article.title}
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  style={{ objectFit: "cover" }}
+                  priority
+                />
+              </Box>
             </Link>
           </ArticleContainer>
           <Box px={3}>

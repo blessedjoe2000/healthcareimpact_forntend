@@ -23,13 +23,13 @@ export const SideTopContent = styled(Box)`
 `;
 
 export const SideHeadline = styled(Box)`
-  font-size: 0.9rem;
-  font-weight: 700;
+  font-size: 1rem;
+  font-weight: 600;
   line-height: 1.2;
 `;
 
 export const SideAuthor = styled(Box)`
-  font-size: 0.75rem;
+  font-size: 0.9rem;
   font-weight: 200;
   line-height: 1.2;
   margin-bottom: 10px;

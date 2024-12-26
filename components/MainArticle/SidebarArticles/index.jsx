@@ -12,7 +12,7 @@ import Link from "next/link";
 
 export default function SidebarArticles() {
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.up("768"));
+  const isMobile = useMediaQuery(theme.breakpoints.up("769"));
   const { data: postData } = useArticleData();
 
   if (!isMobile) {
@@ -39,16 +39,16 @@ export default function SidebarArticles() {
           }}
         />
         {postData?.map((post) => (
-          <Box key={post.id}>
+          <Box key={post?.id}>
             <SideContainer>
               <SideTopContent>
-                <SideAuthor>{post.author}</SideAuthor>
+                <SideAuthor>Written by {post?.author}</SideAuthor>
                 <Link href={`http://localhost:3000/${post.title}/${post.id}`}>
-                  <SideHeadline>{post.headline}</SideHeadline>
+                  <SideHeadline>{post?.headline}</SideHeadline>
                 </Link>
               </SideTopContent>
               <Box>
-                <Avatar src={post.authorImage} alt={post.author} />
+                <Avatar src={post?.authors_image?.url} alt={post?.author} />
               </Box>
             </SideContainer>
             <Divider />

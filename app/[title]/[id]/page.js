@@ -77,7 +77,7 @@ export default function SingleArticle() {
               <ArticleAvatarAndAuthor>
                 <div>
                   <Avatar
-                    src={articleData?.authorImage}
+                    src={articleData?.authors_image?.url}
                     alt={articleData?.author}
                   />
                 </div>

@@ -30,12 +30,12 @@ export const ArticleTitle = styled(Box)`
 `;
 
 export const ArticleHeadline = styled(Box)`
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-weight: 200;
 `;
 
 export const ArticleAuthor = styled(Box)`
-  font-size: 0.8rem;
+  font-size: 1rem;
   font-weight: 200;
 `;
 export const ImageContainer = styled(Box)``;

@@ -53,13 +53,13 @@ export default function RelatedArticles({ singleArticle }) {
           <Box key={post.id}>
             <SideContainer>
               <SideTopContent>
-                <SideAuthor>{post.author}</SideAuthor>
+                <SideAuthor>Written by {post.author}</SideAuthor>
                 <Link href={`http://localhost:3000/${post.title}/${post.id}`}>
                   <SideHeadline>{post.headline}</SideHeadline>
                 </Link>
               </SideTopContent>
               <Box>
-                <Avatar src={post.authorImage} alt={post.author} />
+                <Avatar src={post?.authors_image?.url} alt={post?.author} />
               </Box>
             </SideContainer>
             <Divider />

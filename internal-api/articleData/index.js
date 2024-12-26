@@ -42,7 +42,7 @@ export const filterRelatedArticles = async (singleArticle) => {
     const articles = response.data;
 
     const relatedArticles = articles.filter((article) => {
-      if (article?.title !== singleArticle?.title) {
+      if (article?.title === singleArticle?.title) {
         return null;
       }
 
