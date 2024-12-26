@@ -1,26 +1,19 @@
 import { Avatar, Divider, Box, useMediaQuery, useTheme } from "@mui/material";
-import {
-  filterRelatedArticles,
-  useArticleData,
-} from "@/internal-api/articleData";
+import { useArticleData } from "@/internal-api/articleData";
 import {
   SideWrapper,
   SideContainer,
   SideTopContent,
   SideHeadline,
   SideAuthor,
+  SideHeading,
 } from "./styles";
 import Link from "next/link";
-import { useEffect, useState } from "react";
 
 export default function SidebarArticles() {
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.up("sm"));
+  const isMobile = useMediaQuery(theme.breakpoints.up("768"));
   const { data: postData } = useArticleData();
-
-  // const { data: postData } = filterRelatedArticles();
-
-  // console.log("postData :>> ", postData);
 
   if (!isMobile) {
     return null; // Render nothing if not mobile
@@ -37,6 +30,7 @@ export default function SidebarArticles() {
         <Divider orientation="vertical" />
       </Box>
       <SideWrapper>
+        <SideHeading>Trending</SideHeading>
         <Divider
           sx={{
             backgroundColor: (theme) => theme.palette.dividerBackground,
@@ -49,7 +43,7 @@ export default function SidebarArticles() {
             <SideContainer>
               <SideTopContent>
                 <SideAuthor>{post.author}</SideAuthor>
-                <Link href="/">
+                <Link href={`http://localhost:3000/${post.title}/${post.id}`}>
                   <SideHeadline>{post.headline}</SideHeadline>
                 </Link>
               </SideTopContent>

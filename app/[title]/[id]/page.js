@@ -5,7 +5,6 @@ import { Box, Avatar } from "@mui/material";
 
 import {
   ArticleContainer,
-  ImageContainer,
   ArticleTitle,
   ArticleHeadline,
   MainArticleWrapper,
@@ -16,10 +15,8 @@ import {
 } from "./styles";
 import { useParams } from "next/navigation";
 import { useArticleDetail } from "@/internal-api/articleData";
-import SidebarArticles from "@/components/MainArticle/SidebarArticles";
 import { Container } from "@mui/system";
 import Spinner from "@/components/Spinner";
-
 import RelatedArticles from "@/components/RelatedArticles";
 
 export default function SingleArticle() {
@@ -88,16 +85,25 @@ export default function SingleArticle() {
               </ArticleAvatarAndAuthor>
             </ArticleDateAndAuthor>
             <Box>
-              <ImageContainer sx={{ width: "100%", position: "relative" }}>
+              <Box
+                sx={{
+                  width: "100%",
+                  position: "relative",
+                  height: {
+                    xs: "250px",
+                    sm: "300px",
+                    md: "500px",
+                  },
+                }}
+              >
                 <Image
                   src={articleData?.imageUrl.url}
                   alt={articleData?.title}
-                  layout="responsive"
-                  width={100}
-                  height={50}
+                  fill
+                  style={{ objectFit: "cover" }}
                   priority
                 />
-              </ImageContainer>
+              </Box>
               <ArticleMainContent>
                 <div
                   dangerouslySetInnerHTML={{ __html: articleData?.mainContent }}

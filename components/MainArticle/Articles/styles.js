@@ -1,4 +1,4 @@
-import { styled, Box, Typography } from "@mui/material";
+import { styled, Box } from "@mui/material";
 
 export const ArticleContainer = styled(Box)`
   display: grid;
@@ -24,17 +24,17 @@ export const TitleContainer = styled(Box)`
   }
 `;
 
-export const ArticleTitle = styled(Typography)`
+export const ArticleTitle = styled(Box)`
   font-size: 1.2rem;
   font-weight: 700;
 `;
 
-export const ArticleHeadline = styled(Typography)`
+export const ArticleHeadline = styled(Box)`
   font-size: 0.9rem;
   font-weight: 200;
 `;
 
-export const ArticleAuthor = styled(Typography)`
+export const ArticleAuthor = styled(Box)`
   font-size: 0.8rem;
   font-weight: 200;
 `;

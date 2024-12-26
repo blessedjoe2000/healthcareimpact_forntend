@@ -54,7 +54,7 @@ export default function RelatedArticles({ singleArticle }) {
             <SideContainer>
               <SideTopContent>
                 <SideAuthor>{post.author}</SideAuthor>
-                <Link href="/">
+                <Link href={`http://localhost:3000/${post.title}/${post.id}`}>
                   <SideHeadline>{post.headline}</SideHeadline>
                 </Link>
               </SideTopContent>

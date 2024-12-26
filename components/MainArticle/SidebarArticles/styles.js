@@ -1,4 +1,4 @@
-import { styled, Box, Typography } from "@mui/material";
+import { styled, Box } from "@mui/material";
 
 export const SideWrapper = styled(Box)`
   margin-top: 20px;
@@ -22,13 +22,13 @@ export const SideTopContent = styled(Box)`
   margin-bottom: 10px;
 `;
 
-export const SideHeadline = styled(Typography)`
+export const SideHeadline = styled(Box)`
   font-size: 0.9rem;
   font-weight: 700;
   line-height: 1.2;
 `;
 
-export const SideAuthor = styled(Typography)`
+export const SideAuthor = styled(Box)`
   font-size: 0.75rem;
   font-weight: 200;
   line-height: 1.2;

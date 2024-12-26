@@ -29,20 +29,19 @@ export default function Articles() {
               <ArticleAuthor>{`By ${article.author}`}</ArticleAuthor>
             </TitleContainer>
 
-            <ImageContainer sx={{ width: "100%", position: "relative" }}>
-              <Link
-                href={`http://localhost:3000/${article.title}/${article.id}`}
-              >
-                <Image
-                  src={article.imageUrl.url}
-                  alt={article.title}
-                  width={500}
-                  height={300}
-                  priority
-                  layout="responsive"
-                />
-              </Link>
-            </ImageContainer>
+            <Link
+              href={`http://localhost:3000/${article.title}/${article.id}`}
+              style={{ position: "relative", width: "100%", height: "300px" }}
+            >
+              <Image
+                src={article.imageUrl.url}
+                alt={article.title}
+                fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                style={{ objectFit: "cover" }}
+                priority
+              />
+            </Link>
           </ArticleContainer>
           <Box px={3}>
             <Divider

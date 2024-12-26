@@ -1,4 +1,4 @@
-import { styled, Box, Typography } from "@mui/material";
+import { styled, Box } from "@mui/material";
 
 export const SpinnerContainer = styled(Box)`
   padding: 50px 0;
@@ -22,19 +22,19 @@ export const ArticleContainer = styled(Box)`
   }
 `;
 
-export const ArticleTitle = styled(Typography)`
+export const ArticleTitle = styled(Box)`
   font-size: 2rem;
   font-weight: 700;
   line-height: 1.2;
 `;
 
-export const ArticleHeadline = styled(Typography)`
+export const ArticleHeadline = styled(Box)`
   font-size: 1.2rem;
   font-weight: 400;
   margin: 20px 0;
 `;
 
-export const ArticleAuthor = styled(Typography)`
+export const ArticleAuthor = styled(Box)`
   margin-top: 10px;
   font-size: 0.8rem;
   font-weight: 200;

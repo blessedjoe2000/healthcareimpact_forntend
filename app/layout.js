@@ -20,7 +20,7 @@ export default function RootLayout({ children }) {
                 minHeight: "100vh",
               }}
             >
-              <Navbar />
+              {/* <Navbar /> */}
               <Box sx={{ flex: 1 }}>{children}</Box>
               <Footer />
             </Box>

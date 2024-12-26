@@ -1,13 +1,14 @@
 import Link from "next/link";
-import { Divider, Typography } from "@mui/material";
+import { Divider } from "@mui/material";
 import { NavContainer, NavList, NavMenu } from "./styles";
 import DarkAndLightSwitch from "../DarkAndLightMood";
+import { Box } from "@mui/system";
 
 function Navbar() {
   return (
     <NavContainer>
-      <div className="navbar">
-        <Typography>LOGO</Typography>
+      <Box className="navbar">
+        <Box>LOGO</Box>
         <NavMenu>
           <NavList>
             <Link href="/" className="navlist">
@@ -31,7 +32,7 @@ function Navbar() {
           </NavList>
         </NavMenu>
         <DarkAndLightSwitch />
-      </div>
+      </Box>
       <Divider />
     </NavContainer>
   );

@@ -1,4 +1,4 @@
-import { useState, CSSProperties } from "react";
+import { useState } from "react";
 import { RotateLoader } from "react-spinners";
 
 const override = {

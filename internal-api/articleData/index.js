@@ -41,7 +41,6 @@ export const filterRelatedArticles = async (singleArticle) => {
     const response = await axios.get(`/api/articles`);
     const articles = response.data;
 
-    // Filter articles based on matching keywords in the single article title or content
     const relatedArticles = articles.filter((article) => {
       if (article?.title !== singleArticle?.title) {
         return null;
