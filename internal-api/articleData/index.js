@@ -67,13 +67,11 @@ export const getTrendyArticles = async () => {
     const response = await axios.get(`/api/articles`);
     const articles = response.data;
 
-    // console.log("articles in get trendy articles :>> ", articles);
     // Sort articles by the number of clicks in descending order
     const sortedArticles = articles.sort(
       (a, b) => (b.clicks || 0) - (a.clicks || 0)
     );
 
-    // console.log("sortedArticles in get trendy articles :>> ", sortedArticles);
     // Return the top 20 articles
     return sortedArticles.slice(0, 20);
   } catch (error) {

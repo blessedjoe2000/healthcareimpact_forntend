@@ -16,7 +16,7 @@ import axios from "axios";
 export default function RelatedArticles({ singleArticle }) {
   const [relatedArticles, setRelatedArticles] = useState([]);
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.up("sm"));
+  const isMobile = useMediaQuery(theme.breakpoints.up("769"));
 
   useEffect(() => {
     const fetchRelated = async () => {
@@ -35,10 +35,6 @@ export default function RelatedArticles({ singleArticle }) {
     }
   };
 
-  if (!isMobile) {
-    return null; // Render nothing if not mobile
-  }
-
   return (
     <Box
       sx={{
@@ -46,9 +42,11 @@ export default function RelatedArticles({ singleArticle }) {
         width: "100%",
       }}
     >
-      <Box mr={2} py={3}>
-        <Divider orientation="vertical" />
-      </Box>
+      {isMobile && (
+        <Box mr={2} py={3}>
+          <Divider orientation="vertical" />
+        </Box>
+      )}
       <SideWrapper>
         <SideHeading>Related Post</SideHeading>
         <Divider
