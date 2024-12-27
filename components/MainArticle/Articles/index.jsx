@@ -9,9 +9,18 @@ import {
   ArticleAuthor,
 } from "./styles";
 import Link from "next/link";
+import axios from "axios";
 
 export default function Articles() {
   const { data: articlesData } = useArticleData();
+
+  const addArticleClick = async (articleId) => {
+    try {
+      await axios.put(`/api/articles/click/${articleId}`);
+    } catch (error) {
+      console.error("Error adding article click:", error.message);
+    }
+  };
 
   return (
     <div>
@@ -21,6 +30,7 @@ export default function Articles() {
             <TitleContainer>
               <Link
                 href={`http://localhost:3000/${article.title}/${article.id}`}
+                onClick={() => addArticleClick(article.id)}
               >
                 <ArticleTitle>{article.title}</ArticleTitle>
               </Link>
@@ -28,7 +38,10 @@ export default function Articles() {
               <ArticleAuthor>{`By ${article.author}`}</ArticleAuthor>
             </TitleContainer>
 
-            <Link href={`http://localhost:3000/${article.title}/${article.id}`}>
+            <Link
+              href={`http://localhost:3000/${article.title}/${article.id}`}
+              onClick={() => addArticleClick(article.id)}
+            >
               <Box
                 sx={{
                   width: "100%",

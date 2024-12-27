@@ -11,6 +11,7 @@ import {
   SideWrapper,
 } from "../MainArticle/SidebarArticles/styles";
 import { useEffect, useState } from "react";
+import axios from "axios";
 
 export default function RelatedArticles({ singleArticle }) {
   const [relatedArticles, setRelatedArticles] = useState([]);
@@ -25,6 +26,14 @@ export default function RelatedArticles({ singleArticle }) {
 
     fetchRelated();
   }, [singleArticle]);
+
+  const addArticleClick = async (articleId) => {
+    try {
+      await axios.put(`/api/articles/click/${articleId}`);
+    } catch (error) {
+      console.error("Error adding article click:", error.message);
+    }
+  };
 
   if (!isMobile) {
     return null; // Render nothing if not mobile
@@ -49,17 +58,23 @@ export default function RelatedArticles({ singleArticle }) {
             color: (theme) => theme.palette.text.primary,
           }}
         />
-        {relatedArticles?.map((post) => (
-          <Box key={post.id}>
+        {relatedArticles?.map((article) => (
+          <Box key={article.id}>
             <SideContainer>
               <SideTopContent>
-                <SideAuthor>Written by {post.author}</SideAuthor>
-                <Link href={`http://localhost:3000/${post.title}/${post.id}`}>
-                  <SideHeadline>{post.headline}</SideHeadline>
+                <SideAuthor>Written by {article.author}</SideAuthor>
+                <Link
+                  href={`http://localhost:3000/${article.title}/${article.id}`}
+                  onClick={() => addArticleClick(article.id)}
+                >
+                  <SideHeadline>{article.headline}</SideHeadline>
                 </Link>
               </SideTopContent>
               <Box>
-                <Avatar src={post?.authors_image?.url} alt={post?.author} />
+                <Avatar
+                  src={article?.authors_image?.url}
+                  alt={article?.author}
+                />
               </Box>
             </SideContainer>
             <Divider />

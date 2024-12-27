@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 
-const fetchArticles = async () => {
+export const fetchArticles = async () => {
   const response = await axios.get(`/api/articles`);
   return response.data;
 };
@@ -57,6 +57,31 @@ export const filterRelatedArticles = async (singleArticle) => {
     return relatedArticles.length > 0 ? relatedArticles : articles;
   } catch (error) {
     console.error("Error fetching related articles:", error);
+    return [];
+  }
+};
+
+export const getTrendyArticles = async () => {
+  try {
+    // Fetch all articles
+    const response = await axios.get(`/api/articles`);
+    const articles = response.data;
+
+    // console.log("articles in get trendy articles :>> ", articles);
+    // Sort articles by the number of clicks in descending order
+    const sortedArticles = articles.sort(
+      (a, b) => (b.clicks || 0) - (a.clicks || 0)
+    );
+
+    // console.log("sortedArticles in get trendy articles :>> ", sortedArticles);
+    // Return the top 20 articles
+    return sortedArticles.slice(0, 20);
+  } catch (error) {
+    console.log(
+      "error occured while fetching trendy articles ",
+      error.message,
+      { status: error.status }
+    );
     return [];
   }
 };

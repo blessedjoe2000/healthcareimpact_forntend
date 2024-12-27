@@ -35,7 +35,7 @@ export const ArticleHeadline = styled(Box)`
 `;
 
 export const ArticleAuthor = styled(Box)`
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: 200;
 `;
 export const ImageContainer = styled(Box)``;
