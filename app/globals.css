@@ -8,6 +8,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 10px;
   background-color: #021526;
   color: #fff;
   padding: 10px 30px;
@@ -29,10 +30,6 @@ a {
   color: #0779e4;
 }
 a:hover {
-  /* color: #fed049; */
-  /* color: #fedb39; */
-  /* color: #f037a5; */
-  /* color: #f0de36; */
   color: #fcd307;
 }
 
@@ -50,4 +47,20 @@ a:hover {
 footer {
   background-color: #021526;
   color: #fff;
+}
+
+.submit {
+  padding: 0, 2px;
+  height: "100%";
+  position: "absolute";
+  pointer-events: none;
+  display: "flex";
+  align-items: "center";
+  justify-content: "center";
+  cursor: pointer;
+}
+
+.search-icon {
+  position: absolute;
+  cursor: pointer;
 }

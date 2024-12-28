@@ -91,7 +91,20 @@ export const searchedArticles = async () => {
     const articles = response.data;
 
     const { searchParams } = new URL(req.url);
+
     let searchQuery = searchParams.get("query");
+    searchQuery = searchQuery.toLowerCase();
+
+    const searchedArticles = articles?.filter((article) => {
+      return (
+        article?.title.toLowerCase().includes(searchQuery) ||
+        article?.mainContent.toLowerCase().includes(searchQuery) ||
+        article?.highlights.toLowerCase().includes(searchQuery) ||
+        article?.headline.toLowerCase().includes(searchQuery)
+      );
+    });
+
+    return searchedArticles;
   } catch (error) {
     console.log("error occured while searching articles ", error.message, {
       status: error.status,

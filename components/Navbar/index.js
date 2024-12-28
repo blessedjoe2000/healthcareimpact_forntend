@@ -14,7 +14,7 @@ function Navbar() {
         <SearchBar />
         <Box>
           <Link href="/" className="">
-            <Image src={logo} alt="logo" width={200} height={70} />
+            <Image src={logo} alt="logo" width={200} height={70} priority />
           </Link>
         </Box>
         <DarkAndLightSwitch />
