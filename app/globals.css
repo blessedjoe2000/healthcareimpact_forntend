@@ -8,7 +8,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #fff;
+  background-color: #021526;
+  color: #fff;
   padding: 10px 30px;
 }
 
@@ -28,7 +29,11 @@ a {
   color: #0779e4;
 }
 a:hover {
-  color: #f037a5;
+  /* color: #fed049; */
+  /* color: #fedb39; */
+  /* color: #f037a5; */
+  /* color: #f0de36; */
+  color: #fcd307;
 }
 
 .navlist:hover {
@@ -43,6 +48,6 @@ a:hover {
 }
 
 footer {
-  background-color: #000;
+  background-color: #021526;
   color: #fff;
 }

@@ -8,6 +8,14 @@ import { FooterContent, FooterCopyright } from "./styles";
 function Footer() {
   return (
     <footer>
+      <Divider
+        sx={{
+          backgroundColor: (theme) => theme.palette.dividerBackground,
+          height: "1px",
+
+          color: (theme) => theme.palette.text.primary,
+        }}
+      />
       <FooterContent>
         <Box>Terms of service </Box>
         <Box>|</Box>

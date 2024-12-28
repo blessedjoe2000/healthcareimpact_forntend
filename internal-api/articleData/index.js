@@ -83,3 +83,18 @@ export const getTrendyArticles = async () => {
     return [];
   }
 };
+
+export const searchedArticles = async () => {
+  try {
+    // Fetch all articles
+    const response = await axios.get(`/api/articles`);
+    const articles = response.data;
+
+    const { searchParams } = new URL(req.url);
+    let searchQuery = searchParams.get("query");
+  } catch (error) {
+    console.log("error occured while searching articles ", error.message, {
+      status: error.status,
+    });
+  }
+};
