@@ -9,7 +9,7 @@ const override = {
 
 export default function Spinner() {
   let [loading, setLoading] = useState(true);
-  let [color, setColor] = useState("#01579B");
+  let [color, setColor] = useState("#F4E80D");
   return (
     <div className="sweet-loading">
       <RotateLoader

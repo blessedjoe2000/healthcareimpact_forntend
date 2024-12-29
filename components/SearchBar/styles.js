@@ -30,16 +30,8 @@ export const SearchIconWrapper = styled("div")(({ theme }) => ({
 export const StyledInputBase = styled(InputBase)(({ theme }) => ({
   color: "inherit",
   flex: 1,
-  // width: "100%",
   "& .MuiInputBase-input": {
     padding: theme.spacing(1, 1, 1, 0),
-    transition: theme.transitions.create("width"),
-    [theme.breakpoints.up("sm")]: {
-      width: "12ch",
-      "&:focus": {
-        width: "20ch",
-      },
-    },
   },
 }));
 

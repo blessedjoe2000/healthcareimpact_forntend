@@ -7,6 +7,7 @@ import {
   ArticleTitle,
   ArticleHeadline,
   ArticleAuthor,
+  StyledLink,
 } from "./styles";
 import Link from "next/link";
 import axios from "axios";
@@ -28,12 +29,18 @@ export default function Articles() {
         <Box key={article.id}>
           <ArticleContainer>
             <TitleContainer>
-              <Link
+              <StyledLink
                 href={`http://localhost:3000/${article.title}/${article.id}`}
                 onClick={() => addArticleClick(article.id)}
+                sx={{
+                  color: (theme) => theme.palette.link.default,
+                  "&:hover": {
+                    color: (theme) => theme.palette.link.hover,
+                  },
+                }}
               >
                 <ArticleTitle>{article.title}</ArticleTitle>
-              </Link>
+              </StyledLink>
               <ArticleHeadline>{article.highlights}</ArticleHeadline>
               <ArticleAuthor>{`By ${article.author}`}</ArticleAuthor>
             </TitleContainer>

@@ -1,5 +1,5 @@
 import { Avatar, Divider, Box, useMediaQuery, useTheme } from "@mui/material";
-import { getTrendyArticles, useArticleData } from "@/internal-api/articleData";
+import { getTrendyArticles } from "@/internal-api/articleData";
 import {
   SideWrapper,
   SideContainer,
@@ -11,6 +11,7 @@ import {
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { StyledLink } from "../Articles/styles";
 
 export default function SidebarArticles() {
   const [trendyArticles, setTrendyArticles] = useState([]);
@@ -62,12 +63,12 @@ export default function SidebarArticles() {
             <SideContainer>
               <SideTopContent>
                 <SideAuthor>Written by {article?.author}</SideAuthor>
-                <Link
+                <StyledLink
                   href={`http://localhost:3000/${article.title}/${article.id}`}
                   onClick={() => addArticleClick(article.id)}
                 >
                   <SideHeadline>{article?.headline}</SideHeadline>
-                </Link>
+                </StyledLink>
               </SideTopContent>
               <Box>
                 <Avatar

@@ -38,4 +38,11 @@ export const ArticleAuthor = styled(Box)`
   font-size: 0.9rem;
   font-weight: 200;
 `;
-export const ImageContainer = styled(Box)``;
+
+export const StyledLink = styled("a")(({ theme }) => ({
+  color: theme.palette.link.default,
+  textDecoration: "none",
+  "&:hover": {
+    color: theme.palette.link.hover,
+  },
+}));

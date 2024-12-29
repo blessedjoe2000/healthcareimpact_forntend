@@ -6,7 +6,7 @@
 
 .navbar {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   gap: 10px;
   background-color: #021526;
@@ -14,53 +14,18 @@
   padding: 10px 30px;
 }
 
-.navlist {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 5em;
+@media (max-width: 500px) {
+  .navbar {
+    flex-direction: column;
+    gap: 5px;
+  }
 }
 
-.postcard {
-  display: flex;
-}
-
-a {
-  text-decoration: none;
-  color: #0779e4;
-}
 a:hover {
   color: #fcd307;
-}
-
-.navlist:hover {
-  font-size: 1rem;
-  font-weight: 400;
-}
-
-.navlist:hover {
-  transition: font-weight 0.3s ease;
-
-  font-weight: 600;
 }
 
 footer {
   background-color: #021526;
   color: #fff;
-}
-
-.submit {
-  padding: 0, 2px;
-  height: "100%";
-  position: "absolute";
-  pointer-events: none;
-  display: "flex";
-  align-items: "center";
-  justify-content: "center";
-  cursor: pointer;
-}
-
-.search-icon {
-  position: absolute;
-  cursor: pointer;
 }

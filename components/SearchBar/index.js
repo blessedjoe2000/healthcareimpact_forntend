@@ -37,7 +37,14 @@ export default function SearchBar() {
     <form onSubmit={handleSubmit}>
       <Search>
         <SearchIconWrapper>
-          <SearchIcon sx={{ color: "#F4E80D" }} />
+          <SearchIcon
+            sx={{
+              "&:hover": {
+                color: "#F4E80D",
+              },
+            }}
+            onClick={handleSubmit}
+          />
         </SearchIconWrapper>
 
         <StyledInputBase
@@ -50,7 +57,9 @@ export default function SearchBar() {
           <ClearIconWrapper>
             <ClearIcon
               sx={{
-                color: "#F4E80D",
+                "&:hover": {
+                  color: "#F4E80D",
+                },
               }}
               onClick={handleClear}
             />

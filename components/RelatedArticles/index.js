@@ -12,6 +12,7 @@ import {
 } from "../MainArticle/SidebarArticles/styles";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { StyledLink } from "../MainArticle/Articles/styles";
 
 export default function RelatedArticles({ singleArticle }) {
   const [relatedArticles, setRelatedArticles] = useState([]);
@@ -61,12 +62,12 @@ export default function RelatedArticles({ singleArticle }) {
             <SideContainer>
               <SideTopContent>
                 <SideAuthor>Written by {article.author}</SideAuthor>
-                <Link
+                <StyledLink
                   href={`http://localhost:3000/${article.title}/${article.id}`}
                   onClick={() => addArticleClick(article.id)}
                 >
                   <SideHeadline>{article.headline}</SideHeadline>
-                </Link>
+                </StyledLink>
               </SideTopContent>
               <Box>
                 <Avatar

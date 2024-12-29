@@ -39,6 +39,9 @@ export function ThemeProvider({ children }) {
         palette: {
           mode,
           dividerBackground: mode === "light" ? "#000" : "#EEEEEE",
+          link: {
+            default: mode === "light" ? "#000" : "#fff",
+          },
           primary: {
             main: "#fff",
             light: "#F5F5F5",
@@ -48,7 +51,7 @@ export function ThemeProvider({ children }) {
             light: "#E3F2FD",
           },
           text: {
-            primary: mode === "light" ? "#0779E4" : "#fff",
+            primary: mode === "light" ? "#000" : "#fff",
             secondary: mode === "light" ? "#000" : "#E0E0E0",
           },
           background: {
