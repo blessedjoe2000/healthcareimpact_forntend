@@ -1,5 +1,11 @@
 import SearchIcon from "@mui/icons-material/Search";
-import { Search, SearchIconWrapper, StyledInputBase } from "./styles";
+import ClearIcon from "@mui/icons-material/Clear";
+import {
+  ClearIconWrapper,
+  Search,
+  SearchIconWrapper,
+  StyledInputBase,
+} from "./styles";
 import { useState } from "react";
 import axios from "axios";
 import { useSearch } from "../providers/searchProvider/SearchProvider";
@@ -7,7 +13,7 @@ import { useSearch } from "../providers/searchProvider/SearchProvider";
 export default function SearchBar() {
   const [searchQuery, setSearchQuery] = useState("");
 
-  const { setSearchedResults } = useSearch();
+  const { setSearchedResults, resetSearchResults } = useSearch();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -17,10 +23,14 @@ export default function SearchBar() {
       );
       const searchedArticles = await response.data;
       setSearchedResults(searchedArticles);
-      setSearchQuery("");
     } catch (error) {
       console.log("error occured while getting searched articles ", error);
     }
+  };
+
+  const handleClear = () => {
+    setSearchQuery("");
+    resetSearchResults();
   };
 
   return (
@@ -36,6 +46,16 @@ export default function SearchBar() {
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
         />
+        {searchQuery && (
+          <ClearIconWrapper>
+            <ClearIcon
+              sx={{
+                color: "#F4E80D",
+              }}
+              onClick={handleClear}
+            />
+          </ClearIconWrapper>
+        )}
       </Search>
     </form>
   );
