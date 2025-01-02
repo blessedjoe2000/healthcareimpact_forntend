@@ -41,6 +41,7 @@ export function ThemeProvider({ children }) {
           dividerBackground: mode === "light" ? "#000" : "#EEEEEE",
           link: {
             default: mode === "light" ? "#000" : "#fff",
+            hover: mode === "light" ? "#006BFF" : "#FEF602",
           },
           primary: {
             main: "#fff",

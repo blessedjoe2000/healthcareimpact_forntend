@@ -29,7 +29,7 @@ export default function SearchedArticles() {
           <ArticleContainer>
             <TitleContainer>
               <Link
-                href={`https://hcimag.org/${article.title}/${article.id}`}
+                href={`/${article.title}/${article.id}`}
                 onClick={() => addArticleClick(article.id)}
               >
                 <ArticleTitle>{article.title}</ArticleTitle>
@@ -39,7 +39,7 @@ export default function SearchedArticles() {
             </TitleContainer>
 
             <Link
-              href={`https://hcimag.org/${article.title}/${article.id}`}
+              href={`/${article.title}/${article.id}`}
               onClick={() => addArticleClick(article.id)}
             >
               <Box

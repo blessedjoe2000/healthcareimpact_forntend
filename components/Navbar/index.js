@@ -4,7 +4,7 @@ import { NavContainer, SearchBarAndModeContainer } from "./styles";
 import DarkAndLightSwitch from "../DarkAndLightMood";
 import { Box } from "@mui/system";
 import Image from "next/image";
-import logo from "../../public/images/hcimpactlogo.png";
+import logo from "../../public/images/hcimaglogo.png";
 import SearchBar from "../SearchBar";
 
 function Navbar() {

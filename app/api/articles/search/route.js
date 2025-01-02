@@ -13,12 +13,7 @@ export async function GET(req) {
     searchQuery = searchQuery.toLowerCase();
 
     const searchedArticles = articles?.filter((article) => {
-      return (
-        article?.title.toLowerCase().includes(searchQuery) ||
-        article?.mainContent.toLowerCase().includes(searchQuery) ||
-        article?.highlights.toLowerCase().includes(searchQuery) ||
-        article?.headline.toLowerCase().includes(searchQuery)
-      );
+      return article?.title.toLowerCase().includes(searchQuery);
     });
 
     return new Response(JSON.stringify(searchedArticles), { status: 200 });

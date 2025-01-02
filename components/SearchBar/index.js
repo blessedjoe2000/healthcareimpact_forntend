@@ -40,7 +40,7 @@ export default function SearchBar() {
           <SearchIcon
             sx={{
               "&:hover": {
-                color: "#F4E80D",
+                color: "#FEF602",
               },
             }}
             onClick={handleSubmit}
@@ -58,7 +58,7 @@ export default function SearchBar() {
             <ClearIcon
               sx={{
                 "&:hover": {
-                  color: "#F4E80D",
+                  color: "#FEF602",
                 },
               }}
               onClick={handleClear}
