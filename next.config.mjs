@@ -3,27 +3,44 @@ const nextConfig = {
   reactStrictMode: true,
   images: {
     remotePatterns: [
-      // {
-      //   protocol: "http",
-      //   hostname: "healthcareimpact.local",
-      // },
+      {
+        protocol: "http",
+        hostname: "healthcareimpact.local",
+      },
       {
         protocol: "https",
         hostname: "hcimag.org",
       },
-      // {
-      //   protocol: "https",
-      //   hostname:
-      //     (process.env.NEXT_PUBLIC_ASSET_BASE_URL || "")
-      //       .replace(/^https?:\/\//, "")
-      //       .replace(/\/$/, "") || "healthcareimpact.local",
-      // },
+      {
+        protocol: "https",
+        hostname: "www.hcimag.org",
+      },
+      {
+        protocol: "https",
+        hostname:
+          (process.env.NEXT_PUBLIC_ASSET_BASE_URL || "")
+            .replace(/^https?:\/\//, "")
+            .replace(/\/$/, "") || "healthcareimpact.local",
+      },
       {
         protocol: "https",
         hostname:
           (process.env.NEXT_PUBLIC_ASSET_BASE_URL || "")
             .replace(/^https?:\/\//, "")
             .replace(/\/$/, "") || "hcimag.org",
+      },
+
+      {
+        protocol: "https",
+        hostname: "0.gravatar.com",
+      },
+      {
+        protocol: "https",
+        hostname: "1.gravatar.com",
+      },
+      {
+        protocol: "https",
+        hostname: "2.gravatar.com",
       },
     ],
   },
