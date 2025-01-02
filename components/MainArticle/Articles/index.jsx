@@ -15,6 +15,8 @@ import axios from "axios";
 export default function Articles() {
   const { data: articlesData } = useArticleData();
 
+  console.log("articles data ", articlesData);
+
   const addArticleClick = async (articleId) => {
     try {
       await axios.put(`/api/articles/click/${articleId}`);
