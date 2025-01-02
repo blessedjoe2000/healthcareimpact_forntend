@@ -3,21 +3,21 @@ const nextConfig = {
   reactStrictMode: true,
   images: {
     remotePatterns: [
-      {
-        protocol: "http",
-        hostname: "healthcareimpact.local",
-      },
+      // {
+      //   protocol: "http",
+      //   hostname: "healthcareimpact.local",
+      // },
       {
         protocol: "https",
         hostname: "hcimag.org",
       },
-      {
-        protocol: "https",
-        hostname:
-          (process.env.NEXT_PUBLIC_ASSET_BASE_URL || "")
-            .replace(/^https?:\/\//, "")
-            .replace(/\/$/, "") || "healthcareimpact.local",
-      },
+      // {
+      //   protocol: "https",
+      //   hostname:
+      //     (process.env.NEXT_PUBLIC_ASSET_BASE_URL || "")
+      //       .replace(/^https?:\/\//, "")
+      //       .replace(/\/$/, "") || "healthcareimpact.local",
+      // },
       {
         protocol: "https",
         hostname:
