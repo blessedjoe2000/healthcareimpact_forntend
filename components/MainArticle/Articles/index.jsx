@@ -30,7 +30,7 @@ export default function Articles() {
           <ArticleContainer>
             <TitleContainer>
               <StyledLink
-                href={`http://localhost:3000/${article.title}/${article.id}`}
+                href={`/${article.title}/${article.id}`}
                 onClick={() => addArticleClick(article.id)}
                 sx={{
                   color: (theme) => theme.palette.link.default,
@@ -46,7 +46,7 @@ export default function Articles() {
             </TitleContainer>
 
             <Link
-              href={`http://localhost:3000/${article.title}/${article.id}`}
+              href={`/${article.title}/${article.id}`}
               onClick={() => addArticleClick(article.id)}
             >
               <Box

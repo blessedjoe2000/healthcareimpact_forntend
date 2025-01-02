@@ -1,7 +1,6 @@
 import { Avatar, Divider, Box, useMediaQuery, useTheme } from "@mui/material";
 import { filterRelatedArticles } from "@/internal-api/articleData";
 
-import Link from "next/link";
 import {
   SideAuthor,
   SideContainer,
@@ -63,7 +62,7 @@ export default function RelatedArticles({ singleArticle }) {
               <SideTopContent>
                 <SideAuthor>Written by {article.author}</SideAuthor>
                 <StyledLink
-                  href={`http://localhost:3000/${article.title}/${article.id}`}
+                  href={`/${article.title}/${article.id}`}
                   onClick={() => addArticleClick(article.id)}
                 >
                   <SideHeadline>{article.headline}</SideHeadline>

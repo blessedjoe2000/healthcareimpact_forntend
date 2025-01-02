@@ -16,16 +16,8 @@ function Footer() {
           color: (theme) => theme.palette.text.primary,
         }}
       />
-      <FooterContent>
-        <Box>Terms of service </Box>
-        <Box>|</Box>
-        <Box>Privacy</Box>
-        <Box>|</Box>
-        <Box>Health</Box>
-      </FooterContent>
-      <Divider sx={{ mx: "50px" }} />
       <FooterCopyright>
-        All Rights Reserved. ©{new Date().getFullYear()}
+        Healthcare Impact. ©{new Date().getFullYear()} All Rights Reserved.
       </FooterCopyright>
     </footer>
   );

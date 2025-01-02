@@ -8,10 +8,11 @@ import {
   SideAuthor,
   SideHeading,
 } from "./styles";
-import Link from "next/link";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { StyledLink } from "../Articles/styles";
+import { SpinnerContainer } from "@/app/[title]/[id]/styles";
+import Spinner from "@/components/Spinner";
 
 export default function SidebarArticles() {
   const [trendyArticles, setTrendyArticles] = useState([]);
@@ -39,6 +40,14 @@ export default function SidebarArticles() {
     return null; // Render nothing if not mobile
   }
 
+  if (!trendyArticles) {
+    return (
+      <SpinnerContainer>
+        <Spinner />
+      </SpinnerContainer>
+    );
+  }
+
   return (
     <Box
       sx={{
@@ -64,7 +73,7 @@ export default function SidebarArticles() {
               <SideTopContent>
                 <SideAuthor>Written by {article?.author}</SideAuthor>
                 <StyledLink
-                  href={`http://localhost:3000/${article.title}/${article.id}`}
+                  href={`/${article.title}/${article.id}`}
                   onClick={() => addArticleClick(article.id)}
                 >
                   <SideHeadline>{article?.headline}</SideHeadline>
