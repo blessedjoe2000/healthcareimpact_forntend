@@ -9,7 +9,7 @@ const nextConfig = {
       },
       {
         protocol: "https",
-        hostname: "healthcareimpact.local",
+        hostname: "hcimag.org",
       },
       {
         protocol: "https",
@@ -20,15 +20,10 @@ const nextConfig = {
       },
       {
         protocol: "https",
-        hostname: "0.gravatar.com",
-      },
-      {
-        protocol: "https",
-        hostname: "1.gravatar.com",
-      },
-      {
-        protocol: "https",
-        hostname: "2.gravatar.com",
+        hostname:
+          (process.env.NEXT_PUBLIC_ASSET_BASE_URL || "")
+            .replace(/^https?:\/\//, "")
+            .replace(/\/$/, "") || "hcimag.org",
       },
     ],
   },
