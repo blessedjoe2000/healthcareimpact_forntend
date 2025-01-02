@@ -4,6 +4,7 @@ import {
   ArticleContainer,
   ArticleHeadline,
   ArticleTitle,
+  StyledLink,
   TitleContainer,
 } from "../MainArticle/Articles/styles";
 import Link from "next/link";
@@ -28,12 +29,12 @@ export default function SearchedArticles() {
         <Box key={article.id}>
           <ArticleContainer>
             <TitleContainer>
-              <Link
+              <StyledLink
                 href={`/${article.title}/${article.id}`}
                 onClick={() => addArticleClick(article.id)}
               >
                 <ArticleTitle>{article.title}</ArticleTitle>
-              </Link>
+              </StyledLink>
               <ArticleHeadline>{article.highlights}</ArticleHeadline>
               <ArticleAuthor>{`By ${article.author}`}</ArticleAuthor>
             </TitleContainer>

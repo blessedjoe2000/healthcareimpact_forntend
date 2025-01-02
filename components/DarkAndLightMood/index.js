@@ -8,7 +8,7 @@ export default function DarkAndLightSwitch() {
     <FormControlLabel
       sx={{ m: 0 }}
       onClick={toggleColorMode}
-      control={<MaterialUISwitch sx={{ ml: 1 }} defaultChecked />}
+      control={<MaterialUISwitch defaultChecked />}
     />
   );
 }

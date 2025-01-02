@@ -1,9 +1,8 @@
 "use client";
 
-import { Divider, Typography } from "@mui/material";
-import { Box } from "@mui/system";
+import { Divider } from "@mui/material";
 import React from "react";
-import { FooterContent, FooterCopyright } from "./styles";
+import { FooterCopyright } from "./styles";
 
 function Footer() {
   return (

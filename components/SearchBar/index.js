@@ -9,9 +9,12 @@ import {
 import { useState } from "react";
 import axios from "axios";
 import { useSearch } from "../providers/searchProvider/SearchProvider";
+import { useRouter } from "next/navigation";
 
 export default function SearchBar() {
   const [searchQuery, setSearchQuery] = useState("");
+
+  const router = useRouter();
 
   const { setSearchedResults, resetSearchResults } = useSearch();
 
@@ -31,6 +34,7 @@ export default function SearchBar() {
   const handleClear = () => {
     setSearchQuery("");
     resetSearchResults();
+    router.push("/");
   };
 
   return (

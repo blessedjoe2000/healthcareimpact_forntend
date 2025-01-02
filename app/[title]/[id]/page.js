@@ -18,11 +18,15 @@ import { useArticleDetail } from "@/internal-api/articleData";
 import { Container } from "@mui/system";
 import Spinner from "@/components/Spinner";
 import RelatedArticles from "@/components/RelatedArticles";
+import { useSearch } from "@/components/providers/searchProvider/SearchProvider";
+import SearchedArticles from "@/components/SearchedArticles";
+import SidebarArticles from "@/components/MainArticle/SidebarArticles";
 
 export default function SingleArticle() {
-  const { id: id } = useParams();
+  const { id } = useParams();
 
   const { data: articleData } = useArticleDetail(id);
+  const { searchResults } = useSearch();
 
   const formatDate = (dateString) => {
     if (!dateString) return "";
@@ -67,54 +71,63 @@ export default function SingleArticle() {
 
   return (
     <Container>
-      <MainArticleWrapper>
-        <div key={articleData?.id}>
-          <ArticleContainer>
-            <ArticleTitle>{articleData?.title}</ArticleTitle>
-            <ArticleHeadline>{articleData?.headline}</ArticleHeadline>
-            <ArticleDateAndAuthor>
-              <Box>{formatDate(articleData?.date)}</Box>
-              <ArticleAvatarAndAuthor>
-                <div>
-                  <Avatar
-                    src={articleData?.authors_image?.url}
-                    alt={articleData?.author}
+      {!searchResults || searchResults.length === 0 ? (
+        <MainArticleWrapper>
+          <div key={articleData?.id}>
+            <ArticleContainer>
+              <ArticleTitle>{articleData?.title}</ArticleTitle>
+              <ArticleHeadline>{articleData?.headline}</ArticleHeadline>
+              <ArticleDateAndAuthor>
+                <Box>{formatDate(articleData?.date)}</Box>
+                <ArticleAvatarAndAuthor>
+                  <div>
+                    <Avatar
+                      src={articleData?.authors_image?.url}
+                      alt={articleData?.author}
+                    />
+                  </div>
+                  <Box>{articleData?.author}</Box>
+                </ArticleAvatarAndAuthor>
+              </ArticleDateAndAuthor>
+              <Box>
+                <Box
+                  sx={{
+                    width: "100%",
+                    position: "relative",
+                    height: {
+                      xs: "250px",
+                      sm: "300px",
+                      md: "500px",
+                    },
+                  }}
+                >
+                  <Image
+                    src={articleData?.imageUrl.url}
+                    alt={articleData?.title}
+                    fill
+                    style={{ objectFit: "cover" }}
+                    priority
                   />
-                </div>
-                <Box>{articleData?.author}</Box>
-              </ArticleAvatarAndAuthor>
-            </ArticleDateAndAuthor>
-            <Box>
-              <Box
-                sx={{
-                  width: "100%",
-                  position: "relative",
-                  height: {
-                    xs: "250px",
-                    sm: "300px",
-                    md: "500px",
-                  },
-                }}
-              >
-                <Image
-                  src={articleData?.imageUrl.url}
-                  alt={articleData?.title}
-                  fill
-                  style={{ objectFit: "cover" }}
-                  priority
-                />
+                </Box>
+                <ArticleMainContent>
+                  <div
+                    dangerouslySetInnerHTML={{
+                      __html: articleData?.mainContent,
+                    }}
+                  />
+                </ArticleMainContent>
               </Box>
-              <ArticleMainContent>
-                <div
-                  dangerouslySetInnerHTML={{ __html: articleData?.mainContent }}
-                />
-              </ArticleMainContent>
-            </Box>
-          </ArticleContainer>
-        </div>
+            </ArticleContainer>
+          </div>
 
-        <RelatedArticles singleArticle={articleData} />
-      </MainArticleWrapper>
+          <RelatedArticles singleArticle={articleData} />
+        </MainArticleWrapper>
+      ) : (
+        <MainArticleWrapper>
+          <SearchedArticles />
+          <SidebarArticles />
+        </MainArticleWrapper>
+      )}
     </Container>
   );
 }
