@@ -7,17 +7,22 @@ import Spinner from "../Spinner";
 import { useArticleData } from "@/internal-api/articleData";
 import { useSearch } from "../providers/searchProvider/SearchProvider";
 import SearchedArticles from "../SearchedArticles";
+import { Box } from "@mui/system";
+import SkeletonMainArticles from "../Skeleton/SkeletonMainArticles";
 
 export default function MainArticle() {
-  const { data: articlesData } = useArticleData();
+  const { isLoading } = useArticleData();
 
   const { searchResults } = useSearch();
 
-  if (!articlesData) {
+  if (isLoading) {
     return (
-      <SpinnerContainer>
-        <Spinner />
-      </SpinnerContainer>
+      <Box sx={{ overflow: "hidden" }}>
+        <SpinnerContainer>
+          <Spinner />
+        </SpinnerContainer>
+        <SkeletonMainArticles />
+      </Box>
     );
   }
   return (
