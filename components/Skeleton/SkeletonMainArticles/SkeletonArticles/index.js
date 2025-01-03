@@ -18,18 +18,44 @@ export default function SkeletonArticles() {
           <Box key={index} mb={2}>
             <SkeletonArticlesContainer>
               <SkeletonLeftContainer>
-                <Skeleton animation="wave" variant="rectangular" height={80} />
                 <Skeleton
                   animation="wave"
                   variant="rectangular"
-                  height={200}
-                  style={{ marginBottom: 20, marginTop: 20 }}
+                  sx={{
+                    height: {
+                      xs: "15px",
+                      sm: "30px",
+                      md: "80px",
+                    },
+                  }}
                 />
                 <Skeleton
                   animation="wave"
                   variant="rectangular"
-                  height={30}
-                  width="70%"
+                  sx={{
+                    height: {
+                      xs: "80px",
+                      sm: "100px",
+                      md: "200px",
+                    },
+                  }}
+                  style={{ marginBottom: 10, marginTop: 10 }}
+                />
+                <Skeleton
+                  animation="wave"
+                  variant="rectangular"
+                  sx={{
+                    height: {
+                      xs: "10px",
+                      sm: "20px",
+                      md: "30px",
+                    },
+                    width: {
+                      xs: "30%",
+                      sm: "50%",
+                      md: "70%",
+                    },
+                  }}
                 />
               </SkeletonLeftContainer>
               <SkeletonRightContainer>

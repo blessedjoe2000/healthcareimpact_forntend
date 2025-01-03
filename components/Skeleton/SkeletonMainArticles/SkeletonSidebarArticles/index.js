@@ -1,20 +1,27 @@
 import { Divider, Skeleton } from "@mui/material";
 import { Box } from "@mui/system";
 import React from "react";
-import { SidebarSkeletonContainer } from "./styles";
+import { SideSkeletonAndAvatar, SideSkeletonContainer } from "./styles";
 
 export default function SkeletonSidebarArticles() {
   return (
-    <SidebarSkeletonContainer>
+    <Box
+      sx={{
+        display: "flex",
+        width: "100%",
+        marginTop: 2,
+      }}
+    >
       <Box mr={2} py={3}>
         <Divider orientation="vertical" />
       </Box>
-      <div>
+      <SideSkeletonContainer>
         <Skeleton
           animation="wave"
           variant="rectangular"
-          width="100%"
-          height={20}
+          width="40%"
+          height={30}
+          style={{ marginBottom: 10 }}
         />
         <Divider
           sx={{
@@ -26,19 +33,29 @@ export default function SkeletonSidebarArticles() {
 
         {[...Array(5)].map((_, index) => (
           <Box key={index}>
-            <Box>
-              <Box>
-                <Skeleton animation="wave" variant="rectangular" height={30} />
-                <Skeleton animation="wave" variant="rectangular" height={100} />
+            <SideSkeletonAndAvatar>
+              <Box sx={{ width: "100%" }}>
+                <Skeleton
+                  animation="wave"
+                  variant="rectangular"
+                  height={50}
+                  style={{ marginBottom: 10, marginTop: 20 }}
+                />
+                <Skeleton
+                  animation="wave"
+                  variant="rectangular"
+                  height={120}
+                  style={{ marginBottom: 20, marginTop: 20 }}
+                />
               </Box>
               <Box>
-                <Skeleton animation="wave" variant="circular" height={50} />
+                <Skeleton variant="circular" width={50} height={50} />
               </Box>
-            </Box>
+            </SideSkeletonAndAvatar>
             <Divider />
           </Box>
         ))}
-      </div>
-    </SidebarSkeletonContainer>
+      </SideSkeletonContainer>
+    </Box>
   );
 }
