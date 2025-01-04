@@ -16,6 +16,7 @@ export default function MainArticle() {
   if (isLoading) {
     return <SkeletonMainArticles />;
   }
+
   return (
     <MainArticleWrapper>
       {!searchResults || searchResults.length === 0 ? (

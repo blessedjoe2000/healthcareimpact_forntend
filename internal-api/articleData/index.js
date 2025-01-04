@@ -90,6 +90,8 @@ export const searchedArticles = async () => {
     const response = await axios.get(`/api/articles`);
     const articles = response.data;
 
+    console.log("articles :>> ", articles);
+
     const { searchParams } = new URL(req.url);
 
     let searchQuery = searchParams.get("query");
