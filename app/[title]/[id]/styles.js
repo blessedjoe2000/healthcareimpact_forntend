@@ -65,7 +65,3 @@ export const ArticleDateAndAuthor = styled(Box)`
     gap: 10px;
   }
 `;
-
-export const ArticleMainContent = styled(Box)`
-  /* color: #000; */
-`;

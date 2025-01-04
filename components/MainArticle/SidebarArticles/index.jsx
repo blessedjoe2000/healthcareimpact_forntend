@@ -11,8 +11,6 @@ import {
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { StyledLink } from "../Articles/styles";
-import { SpinnerContainer } from "@/app/[title]/[id]/styles";
-import Spinner from "@/components/Spinner";
 
 export default function SidebarArticles() {
   const [trendyArticles, setTrendyArticles] = useState([]);
@@ -38,14 +36,6 @@ export default function SidebarArticles() {
 
   if (!isMobile) {
     return null; // Render nothing if not mobile
-  }
-
-  if (!trendyArticles) {
-    return (
-      <SpinnerContainer>
-        <Spinner />
-      </SpinnerContainer>
-    );
   }
 
   return (

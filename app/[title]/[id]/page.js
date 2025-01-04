@@ -11,21 +11,21 @@ import {
   ArticleDateAndAuthor,
   ArticleAvatarAndAuthor,
   ArticleMainContent,
-  SpinnerContainer,
 } from "./styles";
 import { useParams } from "next/navigation";
 import { useArticleDetail } from "@/internal-api/articleData";
 import { Container } from "@mui/system";
-import Spinner from "@/components/Spinner";
 import RelatedArticles from "@/components/RelatedArticles";
 import { useSearch } from "@/components/providers/searchProvider/SearchProvider";
 import SearchedArticles from "@/components/SearchedArticles";
 import SidebarArticles from "@/components/MainArticle/SidebarArticles";
+import SkeletonSingleArticle from "@/components/Skeleton/SkeletonSingleArticle";
+import SkeletonSidebarArticles from "@/components/Skeleton/SkeletonMainArticles/SkeletonSidebarArticles";
 
 export default function SingleArticle() {
   const { id } = useParams();
 
-  const { data: articleData } = useArticleDetail(id);
+  const { data: articleData, isLoading } = useArticleDetail(id);
   const { searchResults } = useSearch();
 
   const formatDate = (dateString) => {
@@ -61,11 +61,14 @@ export default function SingleArticle() {
     }
   };
 
-  if (!articleData) {
+  if (isLoading) {
     return (
-      <SpinnerContainer>
-        <Spinner />
-      </SpinnerContainer>
+      <Container>
+        <MainArticleWrapper>
+          <SkeletonSingleArticle />
+          <SkeletonSidebarArticles />
+        </MainArticleWrapper>
+      </Container>
     );
   }
 
@@ -109,13 +112,13 @@ export default function SingleArticle() {
                     priority
                   />
                 </Box>
-                <ArticleMainContent>
+                <Box>
                   <div
                     dangerouslySetInnerHTML={{
                       __html: articleData?.mainContent,
                     }}
                   />
-                </ArticleMainContent>
+                </Box>
               </Box>
             </ArticleContainer>
           </div>
