@@ -12,8 +12,17 @@ export async function GET(req) {
     let searchQuery = searchParams.get("query");
     searchQuery = searchQuery.toLowerCase();
 
+    if (!searchQuery) {
+      return new Response(JSON.stringify([]), { status: 200 });
+    }
+
+    searchQuery = searchQuery.toLowerCase();
+
     const searchedArticles = articles?.filter((article) => {
-      return article?.title.toLowerCase().includes(searchQuery);
+      return (
+        article?.title.toLowerCase().includes(searchQuery) ||
+        article?.mainContent.toLowerCase().includes(searchQuery)
+      );
     });
 
     return new Response(JSON.stringify(searchedArticles), { status: 200 });

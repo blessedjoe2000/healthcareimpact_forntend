@@ -46,3 +46,24 @@ export const ClearIconWrapper = styled("div")(({ theme }) => ({
 export const ClearIconSpace = styled("div")(({ theme }) => ({
   padding: theme.spacing(0, 3.5),
 }));
+
+export const SuggestionsDropdown = styled("ul")(({ theme }) => ({
+  position: "absolute",
+  backgroundColor: theme.palette.background.default,
+  color: theme.palette.text.primary,
+  borderRadius: "5px",
+  maxHeight: "200px",
+  overflowY: "auto",
+  marginTop: "0px",
+  padding: "10px 20px",
+  listStyle: "none",
+  zIndex: 1000,
+  boxShadow:
+    theme.palette.mode === "light"
+      ? "0px 4px 10px rgba(0, 0, 0, 0.1)"
+      : "0px 4px 10px rgba(255, 255, 255, 0.1)",
+}));
+
+export const SuggestionItem = styled("li")(({ theme }) => ({
+  padding: "5px",
+}));

@@ -10,7 +10,6 @@ import {
   MainArticleWrapper,
   ArticleDateAndAuthor,
   ArticleAvatarAndAuthor,
-  ArticleMainContent,
 } from "./styles";
 import { useParams } from "next/navigation";
 import { useArticleDetail } from "@/internal-api/articleData";

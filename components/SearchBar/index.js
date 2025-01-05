@@ -6,27 +6,52 @@ import {
   Search,
   SearchIconWrapper,
   StyledInputBase,
+  SuggestionItem,
+  SuggestionsDropdown,
 } from "./styles";
 import { useState } from "react";
 import axios from "axios";
 import { useSearch } from "../providers/searchProvider/SearchProvider";
 import { useRouter } from "next/navigation";
+import { StyledLink } from "../MainArticle/Articles/styles";
+import { SideHeadline } from "../MainArticle/SidebarArticles/styles";
 
 export default function SearchBar() {
   const [searchQuery, setSearchQuery] = useState("");
-
-  const router = useRouter();
+  const [searchSuggestions, setSearchSuggestions] = useState([]);
 
   const { setSearchedResults, resetSearchResults } = useSearch();
 
+  const router = useRouter();
+
+  const handleInputChange = async (e) => {
+    const query = e.target.value;
+    setSearchQuery(query);
+
+    if (query.length > 0) {
+      try {
+        const response = await axios.get(`/api/articles/search?query=${query}`);
+        setSearchSuggestions(response.data);
+      } catch (error) {
+        console.error("Error fetching search suggestions:", error);
+      }
+    } else {
+      setSearchSuggestions([]);
+    }
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (!searchQuery) return;
+
     try {
       const response = await axios.get(
         `/api/articles/search?query=${searchQuery}`
       );
       const searchedArticles = await response.data;
       setSearchedResults(searchedArticles);
+      setSearchSuggestions([]);
     } catch (error) {
       console.log("error occured while getting searched articles ", error);
     }
@@ -34,6 +59,7 @@ export default function SearchBar() {
 
   const handleClear = () => {
     setSearchQuery("");
+    setSearchSuggestions([]);
     resetSearchResults();
     router.push("/");
   };
@@ -56,7 +82,7 @@ export default function SearchBar() {
           placeholder="Search…"
           inputProps={{ "aria-label": "search" }}
           value={searchQuery}
-          onChange={(e) => setSearchQuery(e.target.value)}
+          onChange={handleInputChange}
         />
         {searchQuery ? (
           <ClearIconWrapper>
@@ -73,6 +99,27 @@ export default function SearchBar() {
           <ClearIconSpace />
         )}
       </Search>
+
+      {searchSuggestions.length > 0 && (
+        <SuggestionsDropdown>
+          {searchSuggestions.map((article) => (
+            <SuggestionItem key={article.id}>
+              <StyledLink
+                href={`/${article.title}/${article.id}`}
+                onClick={() => addArticleClick(article.id)}
+                sx={{
+                  color: (theme) => theme.palette.link.default,
+                  "&:hover": {
+                    color: (theme) => theme.palette.link.hover,
+                  },
+                }}
+              >
+                <SideHeadline>{article.title}</SideHeadline>
+              </StyledLink>
+            </SuggestionItem>
+          ))}
+        </SuggestionsDropdown>
+      )}
     </form>
   );
 }
