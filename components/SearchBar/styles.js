@@ -42,3 +42,7 @@ export const ClearIconWrapper = styled("div")(({ theme }) => ({
   justifyContent: "center",
   cursor: "pointer",
 }));
+
+export const ClearIconSpace = styled("div")(({ theme }) => ({
+  padding: theme.spacing(0, 3.5),
+}));

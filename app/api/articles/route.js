@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export async function GET(req) {
+export async function GET() {
   const url = `${process.env.NEXT_PUBLIC_API_BASE_URL}/articles`;
 
   try {

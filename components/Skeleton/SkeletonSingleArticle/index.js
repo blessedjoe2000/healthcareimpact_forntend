@@ -74,6 +74,13 @@ export default function SkeletonSingleArticle() {
           <Skeleton
             animation="wave"
             variant="rectangular"
+            height={50}
+            width="40%"
+            style={{ marginBottom: 10, marginTop: 20 }}
+          />
+          <Skeleton
+            animation="wave"
+            variant="rectangular"
             height={200}
             style={{ marginBottom: 10, marginTop: 20 }}
           />
@@ -81,6 +88,13 @@ export default function SkeletonSingleArticle() {
             animation="wave"
             variant="rectangular"
             height={100}
+            style={{ marginBottom: 10, marginTop: 20 }}
+          />
+          <Skeleton
+            animation="wave"
+            variant="rectangular"
+            height={50}
+            width="30%"
             style={{ marginBottom: 10, marginTop: 20 }}
           />
           <Skeleton

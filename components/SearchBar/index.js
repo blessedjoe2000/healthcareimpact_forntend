@@ -1,6 +1,7 @@
 import SearchIcon from "@mui/icons-material/Search";
 import ClearIcon from "@mui/icons-material/Clear";
 import {
+  ClearIconSpace,
   ClearIconWrapper,
   Search,
   SearchIconWrapper,
@@ -57,7 +58,7 @@ export default function SearchBar() {
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
         />
-        {searchQuery && (
+        {searchQuery ? (
           <ClearIconWrapper>
             <ClearIcon
               sx={{
@@ -68,6 +69,8 @@ export default function SearchBar() {
               onClick={handleClear}
             />
           </ClearIconWrapper>
+        ) : (
+          <ClearIconSpace />
         )}
       </Search>
     </form>
