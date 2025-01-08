@@ -1,5 +1,7 @@
 const axios = require("axios");
 
+export const dynamic = "force-dynamic";
+
 async function GET(request, { params }) {
   const id = params.id;
 

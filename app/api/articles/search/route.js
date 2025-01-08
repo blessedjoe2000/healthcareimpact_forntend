@@ -1,9 +1,9 @@
 import axios from "axios";
 
+export const dynamic = "force-dynamic";
+
 export async function GET(req) {
   const url = `${process.env.NEXT_PUBLIC_API_BASE_URL}/articles`;
-
-  console.log("url :>> ", url);
 
   try {
     const response = await axios.get(url);
