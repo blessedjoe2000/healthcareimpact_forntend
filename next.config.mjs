@@ -9,11 +9,11 @@ const nextConfig = {
       },
       {
         protocol: "https",
-        hostname: "hcimpactmag.com",
+        hostname: "hcimag.org",
       },
       {
         protocol: "https",
-        hostname: "www.hcimpactmag.com",
+        hostname: "www.hcimag.org",
       },
       {
         protocol: "https",
@@ -27,7 +27,7 @@ const nextConfig = {
         hostname:
           (process.env.NEXT_PUBLIC_ASSET_BASE_URL || "")
             .replace(/^https?:\/\//, "")
-            .replace(/\/$/, "") || "hcimpactmag.com",
+            .replace(/\/$/, "") || "hcimag.org",
       },
 
       {
