@@ -5,6 +5,7 @@ import {
   ClearIconWrapper,
   Search,
   SearchIconWrapper,
+  SearchResults,
   StyledInputBase,
   SuggestionItem,
   SuggestionsDropdown,
@@ -15,6 +16,8 @@ import { useSearch } from "../providers/searchProvider/SearchProvider";
 import { useRouter } from "next/navigation";
 import { StyledLink } from "../MainArticle/Articles/styles";
 import { SideHeadline } from "../MainArticle/SidebarArticles/styles";
+import Image from "next/image";
+import { ArticleDateAndAuthor } from "@/app/[title]/[id]/styles";
 
 export default function SearchBar() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -114,7 +117,15 @@ export default function SearchBar() {
                   },
                 }}
               >
-                <SideHeadline>{article.title}</SideHeadline>
+                <SearchResults>
+                  <Image
+                    src={article.imageUrl.url}
+                    alt={article.title}
+                    width={50}
+                    height={50}
+                  />
+                  <SideHeadline>{article.title}</SideHeadline>
+                </SearchResults>
               </StyledLink>
             </SuggestionItem>
           ))}

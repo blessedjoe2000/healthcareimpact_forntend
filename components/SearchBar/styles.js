@@ -1,5 +1,6 @@
 import { styled, alpha } from "@mui/material/styles";
 import { InputBase } from "@mui/material";
+import { Box } from "@mui/system";
 
 export const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -66,4 +67,9 @@ export const SuggestionsDropdown = styled("ul")(({ theme }) => ({
 
 export const SuggestionItem = styled("li")(({ theme }) => ({
   padding: "5px",
+}));
+export const SearchResults = styled(Box)(({ theme }) => ({
+  display: "flex",
+  alignItems: "center",
+  gap: "10px",
 }));

@@ -3,6 +3,8 @@ import axios from "axios";
 export async function GET(req) {
   const url = `${process.env.NEXT_PUBLIC_API_BASE_URL}/articles`;
 
+  console.log("url :>> ", url);
+
   try {
     const response = await axios.get(url);
     const articles = response.data;
