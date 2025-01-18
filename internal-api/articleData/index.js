@@ -8,6 +8,7 @@ export const fetchArticles = async () => {
 
 export const fetchArticle = async (id) => {
   const response = await axios.get(`/api/articles/${id}`);
+
   return response.data;
 };
 

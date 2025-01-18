@@ -17,7 +17,7 @@ import { useRouter } from "next/navigation";
 import { StyledLink } from "../MainArticle/Articles/styles";
 import { SideHeadline } from "../MainArticle/SidebarArticles/styles";
 import Image from "next/image";
-import { ArticleDateAndAuthor } from "@/app/[title]/[id]/styles";
+import { ArticleDateAndAuthor } from "@/app/[slug]/[id]/styles";
 
 export default function SearchBar() {
   const [searchQuery, setSearchQuery] = useState("");
