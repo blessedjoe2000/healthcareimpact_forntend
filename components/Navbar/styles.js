@@ -1,3 +1,4 @@
+import { Button } from "@mui/material";
 import { Box, styled } from "@mui/system";
 
 export const NavContainer = styled(Box)`
@@ -12,4 +13,35 @@ export const SearchBarAndModeContainer = styled(Box)`
   align-items: center;
   gap: 5rem;
   padding: 0 5px;
+`;
+
+export const MenuButton = styled(Button)`
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0;
+  position: relative;
+  color: white;
+  transition: all 0.3s ease-in-out;
+  background-color: inherit;
+  text-transform: capitalize;
+
+  :hover {
+    background-color: inherit;
+    color: #fcd307;
+  }
+
+  ::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #fff;
+    transition: width 0.3s ease-in-out;
+  }
+
+  :hover::after {
+    width: 100%;
+  }
 `;

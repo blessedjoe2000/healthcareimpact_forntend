@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Divider } from "@mui/material";
-import { NavContainer, SearchBarAndModeContainer } from "./styles";
+import { MenuButton, NavContainer, SearchBarAndModeContainer } from "./styles";
 import DarkAndLightSwitch from "../DarkAndLightMood";
 import { Box } from "@mui/system";
 import Image from "next/image";
@@ -20,6 +20,9 @@ function Navbar() {
           <SearchBar />
           <DarkAndLightSwitch />
         </SearchBarAndModeContainer>
+        <Link href="/about">
+          <MenuButton>About Us</MenuButton>
+        </Link>
       </Box>
       <Divider />
     </NavContainer>

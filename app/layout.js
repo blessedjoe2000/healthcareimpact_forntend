@@ -7,6 +7,7 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import "./globals.css";
 import { SearchProvider } from "@/components/providers/searchProvider/SearchProvider";
+import { Toaster } from "react-hot-toast";
 
 export default function RootLayout({ children }) {
   return (
@@ -15,6 +16,7 @@ export default function RootLayout({ children }) {
         <ThemeProvider>
           <SearchProvider>
             <ReactQueryProviders>
+              <Toaster position="top-right" />
               <Box
                 sx={{
                   display: "flex",

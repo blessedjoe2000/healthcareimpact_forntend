@@ -25,6 +25,23 @@ a:hover {
   color: #fcd307;
 }
 
+input,
+textarea,
+select {
+  border: 1px solid white;
+  border-radius: 2px;
+  width: 100%;
+  margin-bottom: 0.5rem;
+  padding: 0.5rem;
+  outline: none;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: #006bff;
+}
+
 footer {
   background-color: #021526;
   color: #fff;
