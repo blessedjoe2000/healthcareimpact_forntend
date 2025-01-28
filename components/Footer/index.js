@@ -2,12 +2,7 @@
 
 import { Divider } from "@mui/material";
 import React, { useState } from "react";
-import {
-  FooterContainer,
-  FooterCopyright,
-  ModalContainer,
-  ModalTitle,
-} from "./styles";
+import { FooterContainer, ModalContainer, ModalTitle } from "./styles";
 import Modal from "@mui/material/Modal";
 import Typography from "@mui/material/Typography";
 import Link from "next/link";
@@ -61,8 +56,8 @@ function Footer() {
       </div>
 
       <FooterContainer>
-        <Link href="/about">
-          <MenuButton>About Us</MenuButton>
+        <Link href="/privacy">
+          <MenuButton>Privacy Policy</MenuButton>
         </Link>
         <Box>
           Healthcare Impact. ©{new Date().getFullYear()} All Rights Reserved.

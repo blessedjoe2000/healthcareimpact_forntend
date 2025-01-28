@@ -46,3 +46,8 @@ footer {
   background-color: #021526;
   color: #fff;
 }
+
+span {
+  font-weight: 600;
+  font-style: italic;
+}
