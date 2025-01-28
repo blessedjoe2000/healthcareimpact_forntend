@@ -23,6 +23,10 @@ export const ModalContainer = styled(Box)`
   color: #fff;
   box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
   padding: 2rem;
+
+  @media (max-width: 768px) {
+    width: 100vw;
+  }
 `;
 
 export const ModalTitle = styled(Box)`
