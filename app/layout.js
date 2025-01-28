@@ -8,6 +8,7 @@ import Footer from "../components/Footer";
 import "./globals.css";
 import { SearchProvider } from "@/components/providers/searchProvider/SearchProvider";
 import { Toaster } from "react-hot-toast";
+import ScrollToTop from "@/components/ScrollToTop";
 
 export default function RootLayout({ children }) {
   return (
@@ -26,6 +27,7 @@ export default function RootLayout({ children }) {
               >
                 <Navbar />
                 <Box sx={{ flex: 1 }}>{children}</Box>
+                <ScrollToTop />
                 <Footer />
               </Box>
             </ReactQueryProviders>

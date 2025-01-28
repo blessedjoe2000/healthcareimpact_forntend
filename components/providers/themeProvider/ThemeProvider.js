@@ -69,6 +69,9 @@ export function ThemeProvider({ children }) {
             },
           },
           MuiButton: {
+            defaultProps: {
+              disableRipple: true,
+            },
             styleOverrides: {
               root: {
                 color: "#fff",
