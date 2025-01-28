@@ -39,7 +39,7 @@ select {
 input:focus,
 textarea:focus,
 select:focus {
-  border-color: #006bff;
+  border-color: #01579b;
 }
 
 footer {
@@ -54,6 +54,7 @@ span {
 
 #scrollToTop {
   position: fixed;
+  display: none;
   bottom: 2rem;
   right: 2rem;
   background-color: #01579b;

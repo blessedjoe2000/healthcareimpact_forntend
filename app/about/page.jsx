@@ -43,10 +43,10 @@ export default function About() {
       return toast.error("Name is required. Please enter first and last name", {
         style: {
           padding: "16px",
-          color: "#006bff",
+          color: "#01579b",
         },
         iconTheme: {
-          primary: "#006bff",
+          primary: "#01579b",
           secondary: "#FFFAEE",
         },
       });
@@ -56,10 +56,10 @@ export default function About() {
       return toast.error("Email is required. Please enter email", {
         style: {
           padding: "16px",
-          color: "#006bff",
+          color: "#01579b",
         },
         iconTheme: {
-          primary: "#006bff",
+          primary: "#01579b",
           secondary: "#FFFAEE",
         },
       });
@@ -71,10 +71,10 @@ export default function About() {
         {
           style: {
             padding: "16px",
-            color: "#006bff",
+            color: "#01579b",
           },
           iconTheme: {
-            primary: "#006bff",
+            primary: "#01579b",
             secondary: "#FFFAEE",
           },
         }
@@ -85,10 +85,10 @@ export default function About() {
       return toast.error("Message is required, Please enter a message", {
         style: {
           padding: "16px",
-          color: "#006bff",
+          color: "#01579b",
         },
         iconTheme: {
-          primary: "#006bff",
+          primary: "#01579b",
           secondary: "#FFFAEE",
         },
       });
@@ -111,10 +111,10 @@ export default function About() {
       toast.success(`Hi ${firstName}, message sent successfully`, {
         style: {
           padding: "16px",
-          color: "#006bff",
+          color: "#01579b",
         },
         iconTheme: {
-          primary: "#006bff",
+          primary: "#01579b",
           secondary: "#FFFAEE",
         },
       });
@@ -172,13 +172,13 @@ export default function About() {
             </ContactDetails>
             <IconItemsContainer>
               <IconContainer>
-                <Box sx={{ color: "#006bff" }}>
+                <Box sx={{ color: "#01579b" }}>
                   <MailOutlinedIcon />
                 </Box>
                 info@hcimpactmag.com
               </IconContainer>
               <IconContainer>
-                <Box sx={{ color: "#006bff" }}>
+                <Box sx={{ color: "#01579b" }}>
                   <PhoneIphoneIcon />
                 </Box>
                 281-633-6060
