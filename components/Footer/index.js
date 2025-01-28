@@ -12,6 +12,7 @@ import Modal from "@mui/material/Modal";
 import Typography from "@mui/material/Typography";
 import Link from "next/link";
 import { MenuButton } from "../Navbar/styles";
+import { Box } from "@mui/system";
 
 function Footer() {
   const [open, setOpen] = useState(false);
@@ -63,9 +64,9 @@ function Footer() {
         <Link href="/about">
           <MenuButton>About Us</MenuButton>
         </Link>
-        <FooterCopyright>
+        <Box>
           Healthcare Impact. ©{new Date().getFullYear()} All Rights Reserved.
-        </FooterCopyright>
+        </Box>
         <MenuButton onClick={handleOpen}>Disclaimer</MenuButton>
       </FooterContainer>
     </footer>

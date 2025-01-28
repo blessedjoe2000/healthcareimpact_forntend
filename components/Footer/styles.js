@@ -6,11 +6,11 @@ export const FooterContainer = styled(Box)`
   justify-content: space-around;
   padding: 20px 0;
   text-align: center;
-`;
+  gap: 1rem;
 
-export const FooterCopyright = styled(Box)`
-  /* padding: 20px 0;
-  text-align: center; */
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
 
 export const ModalContainer = styled(Box)`
