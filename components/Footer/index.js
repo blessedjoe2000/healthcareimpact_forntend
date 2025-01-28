@@ -57,12 +57,14 @@ function Footer() {
 
       <FooterContainer>
         <Link href="/privacy">
-          <MenuButton>Privacy Policy</MenuButton>
+          <MenuButton disableRipple>Privacy Policy</MenuButton>
         </Link>
         <Box>
           Healthcare Impact. ©{new Date().getFullYear()} All Rights Reserved.
         </Box>
-        <MenuButton onClick={handleOpen}>Disclaimer</MenuButton>
+        <MenuButton onClick={handleOpen} disableRipple>
+          Disclaimer
+        </MenuButton>
       </FooterContainer>
     </footer>
   );

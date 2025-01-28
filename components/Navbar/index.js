@@ -21,7 +21,7 @@ function Navbar() {
           <DarkAndLightSwitch />
         </SearchBarAndModeContainer>
         <Link href="/about">
-          <MenuButton>About Us</MenuButton>
+          <MenuButton disableRipple>About Us</MenuButton>
         </Link>
       </Box>
       <Divider />

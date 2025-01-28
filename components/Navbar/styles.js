@@ -18,15 +18,14 @@ export const SearchBarAndModeContainer = styled(Box)`
 export const MenuButton = styled(Button)`
   font-size: 1rem;
   font-weight: 500;
-  padding: 0;
   position: relative;
   color: white;
-  transition: all 0.3s ease-in-out;
-  background-color: inherit;
+  transition: none;
+  background-color: transparent;
   text-transform: capitalize;
 
-  :hover {
-    background-color: inherit;
+  &:hover {
+    background-color: transparent;
     color: #fcd307;
   }
 
