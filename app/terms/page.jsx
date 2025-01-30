@@ -5,9 +5,9 @@ import { Box, Container } from "@mui/system";
 import { ContactTitle } from "../about/styles";
 import { SubTitle } from "../policies/styles";
 
-export default function terms() {
+export default function Terms() {
   return (
-    <Container sx={{ mt: "1rem", mb: "5rem" }}>
+    <Container sx={{ mt: "1rem", mb: "3rem" }}>
       <Box sx={{ fontSize: "1.2rem" }}>
         <ContactTitle>Terms of Service</ContactTitle>
         <Typography>

@@ -4,9 +4,9 @@ import { Typography } from "@mui/material";
 import { Box, Container } from "@mui/system";
 import { ContactTitle } from "../about/styles";
 
-export default function privacy() {
+export default function Privacy() {
   return (
-    <Container sx={{ mt: "1rem", mb: "5rem" }}>
+    <Container sx={{ mt: "1rem", mb: "3rem" }}>
       <Box sx={{ fontSize: "1.2rem" }}>
         <ContactTitle>Privacy Policy</ContactTitle>
         <Typography>

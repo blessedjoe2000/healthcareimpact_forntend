@@ -5,9 +5,9 @@ import { Box, Container } from "@mui/system";
 import { ContactTitle } from "../about/styles";
 import { SubTitle } from "./styles";
 
-export default function policies() {
+export default function Policies() {
   return (
-    <Container sx={{ my: "1rem", mb: "5rem" }}>
+    <Container sx={{ my: "1rem", mb: "3rem" }}>
       <Box sx={{ fontSize: "1.2rem" }}>
         <ContactTitle>Policies and Standards</ContactTitle>
         <Box sx={{ my: "" }}>

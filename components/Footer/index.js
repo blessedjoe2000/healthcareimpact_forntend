@@ -1,7 +1,7 @@
 "use client";
 
 import { Divider } from "@mui/material";
-import { FooterContainer } from "./styles";
+import { FooterContainer, FooterItems, ItemsContainer } from "./styles";
 import Link from "next/link";
 import { MenuButton } from "../Navbar/styles";
 import { Box } from "@mui/system";
@@ -10,8 +10,8 @@ function Footer() {
   return (
     <footer>
       <FooterContainer>
-        <Box>
-          <Box>
+        <FooterItems>
+          <ItemsContainer>
             <Link href="/privacy">
               <MenuButton>Privacy Policy</MenuButton>
             </Link>
@@ -21,19 +21,16 @@ function Footer() {
             <Link href="/disclaimer">
               <MenuButton>Disclaimer</MenuButton>
             </Link>
-          </Box>
-          <Box>
+          </ItemsContainer>
+          <ItemsContainer>
             <Link href="/terms">
               <MenuButton>Terms of Service</MenuButton>
             </Link>
-            <Link href="/policies">
-              <MenuButton>Policies and Standards</MenuButton>
+            <Link href="/guidelines">
+              <MenuButton>Guidelines</MenuButton>
             </Link>
-            <Link href="/disclaimer">
-              <MenuButton>Disclaimer</MenuButton>
-            </Link>
-          </Box>
-        </Box>
+          </ItemsContainer>
+        </FooterItems>
         <Divider />
         <Box>
           Healthcare Impact. ©{new Date().getFullYear()} All Rights Reserved.
