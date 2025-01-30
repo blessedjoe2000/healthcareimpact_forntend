@@ -3,14 +3,15 @@ import { styled } from "@mui/system";
 
 export const FooterContainer = styled(Box)`
   display: flex;
+  flex-direction: column;
   justify-content: space-around;
   padding: 20px 0;
   text-align: center;
   gap: 1rem;
 
-  @media (max-width: 768px) {
+  /* @media (max-width: 768px) {
     flex-direction: column;
-  }
+  } */
 `;
 
 export const ModalContainer = styled(Box)`
@@ -25,7 +26,7 @@ export const ModalContainer = styled(Box)`
   padding: 2rem;
 
   @media (max-width: 768px) {
-    width: 100vw;
+    width: 80vw;
   }
 `;
 

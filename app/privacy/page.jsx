@@ -2,12 +2,11 @@
 
 import { Typography } from "@mui/material";
 import { Box, Container } from "@mui/system";
-import React from "react";
 import { ContactTitle } from "../about/styles";
 
 export default function privacy() {
   return (
-    <Container sx={{ mt: "1rem" }}>
+    <Container sx={{ mt: "1rem", mb: "5rem" }}>
       <Box sx={{ fontSize: "1.2rem" }}>
         <ContactTitle>Privacy Policy</ContactTitle>
         <Typography>
