@@ -14,6 +14,7 @@ export function SearchProvider({ children }) {
   const resetSearchResults = () => {
     setSearchResults([]);
   };
+
   return (
     <SearchContext.Provider
       value={{ searchResults, setSearchedResults, resetSearchResults }}

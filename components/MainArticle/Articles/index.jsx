@@ -15,6 +15,8 @@ import axios from "axios";
 export default function Articles() {
   const { data: articlesData } = useArticleData();
 
+  console.log("articlesData :>> ", articlesData);
+
   const addArticleClick = async (articleId) => {
     try {
       await axios.put(`/api/articles/click/${articleId}`);
@@ -30,8 +32,8 @@ export default function Articles() {
           <ArticleContainer>
             <TitleContainer>
               <StyledLink
-                href={`/${article.title}/${article.id}`}
-                onClick={() => addArticleClick(article.id)}
+                href={`/${article?.title}/${article?.id}`}
+                onClick={() => addArticleClick(article?.id)}
                 sx={{
                   color: (theme) => theme.palette.link.default,
                   "&:hover": {
@@ -39,15 +41,15 @@ export default function Articles() {
                   },
                 }}
               >
-                <ArticleTitle>{article.title}</ArticleTitle>
+                <ArticleTitle>{article?.title}</ArticleTitle>
               </StyledLink>
-              <ArticleHeadline>{article.highlights}</ArticleHeadline>
-              <ArticleAuthor>{`By ${article.author}`}</ArticleAuthor>
+              <ArticleHeadline>{article?.highlights}</ArticleHeadline>
+              <ArticleAuthor>{`By ${article?.author}`}</ArticleAuthor>
             </TitleContainer>
 
             <Link
-              href={`/${article.title}/${article.id}`}
-              onClick={() => addArticleClick(article.id)}
+              href={`/${article?.title}/${article?.id}`}
+              onClick={() => addArticleClick(article?.id)}
             >
               <Box
                 sx={{
@@ -61,8 +63,8 @@ export default function Articles() {
                 }}
               >
                 <Image
-                  src={article.imageUrl.url}
-                  alt={article.title}
+                  src={article?.imageUrl}
+                  alt={article?.title}
                   fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   style={{ objectFit: "cover" }}

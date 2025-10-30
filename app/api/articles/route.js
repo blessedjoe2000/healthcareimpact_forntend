@@ -11,7 +11,7 @@ export async function GET() {
 
     return new Response(JSON.stringify(articles), { status: 200 });
   } catch (error) {
-    console.error("Error searcing articles", error);
+    console.error("Error searcing articles");
     return new Response(JSON.stringify({ message: error.message }), {
       status: 500,
     });

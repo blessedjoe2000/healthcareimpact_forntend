@@ -70,10 +70,7 @@ export default function SidebarArticles() {
                 </StyledLink>
               </SideTopContent>
               <Box>
-                <Avatar
-                  src={article?.authors_image?.url}
-                  alt={article?.author}
-                />
+                <Avatar src={article?.authors_image} alt={article?.author} />
               </Box>
             </SideContainer>
             <Divider />
