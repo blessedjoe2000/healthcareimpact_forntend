@@ -119,7 +119,7 @@ export default function SearchBar() {
               >
                 <SearchResults>
                   <Image
-                    src={article.imageUrl.url}
+                    src={article.imageUrl}
                     alt={article.title}
                     width={50}
                     height={50}

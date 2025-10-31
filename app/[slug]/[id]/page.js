@@ -27,6 +27,8 @@ export default function SingleArticle() {
   const { data: articleData, isLoading } = useArticleDetail(id);
   const { searchResults } = useSearch();
 
+  console.log("articleData :>> ", articleData);
+
   const formatDate = (dateString) => {
     if (!dateString) return "";
 
@@ -84,7 +86,7 @@ export default function SingleArticle() {
                 <ArticleAvatarAndAuthor>
                   <div>
                     <Avatar
-                      src={articleData?.authors_image?.url}
+                      src={articleData?.authors_image}
                       alt={articleData?.author}
                     />
                   </div>
@@ -104,7 +106,7 @@ export default function SingleArticle() {
                   }}
                 >
                   <Image
-                    src={articleData?.imageUrl.url}
+                    src={articleData?.imageUrl}
                     alt={articleData?.title}
                     fill
                     style={{ objectFit: "cover" }}
